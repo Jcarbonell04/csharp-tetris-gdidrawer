@@ -1,0 +1,11 @@
+C:\Users\PC\Documents\Github\csharp-tetris\tetris-gdi-drawer\bin\Debug\tetris-gdi-drawer.exe.config
+C:\Users\PC\Documents\Github\csharp-tetris\tetris-gdi-drawer\bin\Debug\tetris-gdi-drawer.exe
+C:\Users\PC\Documents\Github\csharp-tetris\tetris-gdi-drawer\bin\Debug\tetris-gdi-drawer.pdb
+C:\Users\PC\Documents\Github\csharp-tetris\tetris-gdi-drawer\obj\Debug\tetris-gdi-drawer.csproj.AssemblyReference.cache
+C:\Users\PC\Documents\Github\csharp-tetris\tetris-gdi-drawer\obj\Debug\tetris_gdi_drawer.Properties.Resources.resources
+C:\Users\PC\Documents\Github\csharp-tetris\tetris-gdi-drawer\obj\Debug\tetris-gdi-drawer.csproj.GenerateResource.cache
+C:\Users\PC\Documents\Github\csharp-tetris\tetris-gdi-drawer\obj\Debug\tetris-gdi-drawer.csproj.CoreCompileInputs.cache
+C:\Users\PC\Documents\Github\csharp-tetris\tetris-gdi-drawer\obj\Debug\tetris-gdi-drawer.exe
+C:\Users\PC\Documents\Github\csharp-tetris\tetris-gdi-drawer\obj\Debug\tetris-gdi-drawer.pdb
+C:\Users\PC\Documents\Github\csharp-tetris\tetris-gdi-drawer\bin\Debug\GDIDrawer.dll
+C:\Users\PC\Documents\Github\csharp-tetris\tetris-gdi-drawer\obj\Debug\tetris-g.CC22AA1B.Up2Date
