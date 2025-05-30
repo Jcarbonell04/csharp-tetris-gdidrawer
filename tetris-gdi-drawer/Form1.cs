@@ -16,6 +16,10 @@ namespace tetris_gdi_drawer
         private const int canvasHeight = 600;
         private const int canvasWidth = 800;
         private CDrawer canvas; 
+        Timer gameTimer = new Timer();
+        gameTimer.Interval = 200; // 200 ms like `pygame.time.set_timer`
+        gameTimer.Tick += GameUpdate_Tick;
+        gameTimer.Start();
 
         public Form1()
         {
