@@ -1,10 +1,24 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using GDIDrawer;
+
+namespace tetris_gdi_drawer
+{
+    // internal class block
+    // {
+    // }
+
+    public class Block
+    {
+        protected int x;
+        protected int y;
+
+        public Block(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+    }
+}

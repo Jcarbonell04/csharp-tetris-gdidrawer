@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace tetris_gdi_drawer
 {
-    internal class position
+    internal class game
     {
     }
 }

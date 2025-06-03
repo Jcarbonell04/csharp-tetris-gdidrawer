@@ -1,6 +1,6 @@
 ﻿namespace tetris_gdi_drawer
 {
-    partial class Form1
+    partial class main
     {
         /// <summary>
         /// Required designer variable.
