@@ -38,8 +38,8 @@ namespace tetris_gdi_drawer
             int cols = 10;
             int rows = 20;
             int cellSize = 30;  
-            int offsetX = 50;   
-            int offsetY = 150;  
+            int offsetX = 10;   
+            int offsetY = 10;  
 
             Color gridColor = Color.LightBlue;
 
@@ -48,10 +48,11 @@ namespace tetris_gdi_drawer
                 for (int col = 0; col < cols; col++)
                 {
                     // int cellValue = grid[row, col]; colors[cellValue])
-                    canvas.AddRectangle(col * cellSize + 10 + 1, 
-                                        row * cellSize + 10 + 1, cellSize - 1, 
-                                        cellSize - 1, 
-                                        gridColor);
+                    canvas.AddRectangle(offsetX + col * cellSize + 1,
+                    offsetY + row * cellSize + 1,
+                    cellSize - 1, cellSize - 1,
+                    gridColor);
+
                 }
             }
         }
