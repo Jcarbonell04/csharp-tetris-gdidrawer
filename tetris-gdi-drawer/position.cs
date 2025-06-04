@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace tetris_gdi_drawer
 {
-    internal class position
+    // internal class position
+    // {
+    // }
+
+    public class Position
     {
+        public int Row { get; set; }
+        public int Col { get; set; }
+
+        public Position(int row, int col)
+        {
+            Row = row;
+            Col = col;
+        }
     }
 }
