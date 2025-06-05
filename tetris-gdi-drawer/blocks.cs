@@ -3,46 +3,109 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace tetris_gdi_drawer
 {
-    // internal class blocks
-    // {
-    // }
-
-    public class iBlock : Block
+    public class lBlock : Block
     {
-        public iBlock(int x, int y) : base(x, y) { }
-
-    }
-
-    public class oBlock : Block
-    {
-        public oBlock(int x, int y) : base(x, y) { }
-
+        public lBlock() : base(1)
+        {
+            cells = new Position[4, 4]
+            {
+                { new Position(0, 2), new Position(1, 0), new Position(1, 1), new Position(1, 2) },
+                { new Position(0, 1), new Position(1, 1), new Position(2, 1), new Position(2, 2) },
+                { new Position(1, 0), new Position(1, 1), new Position(1, 2), new Position(2, 0) },
+                { new Position(0, 0), new Position(0, 1), new Position(1, 1), new Position(2, 1) }
+            };
+            Move(0, 3);
+        }
     }
 
     public class jBlock : Block
     {
-        public jBlock(int x, int y) : base(x, y) { }
-
+        public jBlock() : base(2)
+        {
+            cells = new Position[4, 4]
+            {
+                { new Position(0, 0), new Position(1, 0), new Position(1, 1), new Position(1, 2) },
+                { new Position(0, 1), new Position(0, 2), new Position(1, 1), new Position(2, 1) },
+                { new Position(1, 0), new Position(1, 1), new Position(1, 2), new Position(2, 2) },
+                { new Position(0, 1), new Position(1, 1), new Position(2, 0), new Position(2, 1) }
+            };
+            Move(0, 3);
+        }
     }
 
-    public class lBlock : Block
+    public class iBlock : Block
     {
-        public lBlock(int x, int y) : base(x, y) { }
+        public iBlock() : base(3)
+        {
+            cells = new Position[4, 4]
+            {
+                { new Position(1, 0), new Position(1, 1), new Position(1, 2), new Position(1, 3) },
+                { new Position(0, 2), new Position(1, 2), new Position(2, 2), new Position(3, 2) },
+                { new Position(2, 0), new Position(2, 1), new Position(2, 2), new Position(2, 3) },
+                { new Position(0, 1), new Position(1, 1), new Position(2, 1), new Position(3, 1) }
+            };
+            Move(-1, 3);
+        }
+    }
 
+    public class oBlock : Block
+    {
+        public oBlock() : base(4)
+        {
+            cells = new Position[1, 4]
+            {
+                { new Position(0, 0), new Position(0, 1), new Position(1, 0), new Position(1, 1) }
+            };
+            Move(0, 4);
+        }
     }
 
     public class sBlock : Block
     {
-        public sBlock(int x, int y) : base(x, y) { }
+        public sBlock() : base(5)
+        {
+            cells = new Position[4, 4]
+            {
+                { new Position(0, 1), new Position(0, 2), new Position(1, 0), new Position(1, 1) },
+                { new Position(0, 1), new Position(1, 1), new Position(1, 2), new Position(2, 2) },
+                { new Position(1, 1), new Position(1, 2), new Position(2, 0), new Position(2, 1) },
+                { new Position(0, 0), new Position(1, 0), new Position(1, 1), new Position(2, 1) }
+            };
+            Move(0, 3);
+        }
+    }
 
+    public class tBlock : Block
+    {
+        public tBlock() : base(6)
+        {
+            cells = new Position[4, 4]
+            {
+                { new Position(0, 1), new Position(1, 0), new Position(1, 1), new Position(1, 2) },
+                { new Position(0, 1), new Position(1, 1), new Position(1, 2), new Position(2, 1) },
+                { new Position(1, 0), new Position(1, 1), new Position(1, 2), new Position(2, 1) },
+                { new Position(0, 1), new Position(1, 0), new Position(1, 1), new Position(2, 1) }
+            };
+            Move(0, 3);
+        }
     }
 
     public class zBlock : Block
     {
-        public zBlock(int x, int y) : base(x, y) { }
-
+        public zBlock() : base(7)
+        {
+            cells = new Position[4, 4]
+            {
+                { new Position(0, 0), new Position(0, 1), new Position(1, 1), new Position(1, 2) },
+                { new Position(0, 2), new Position(1, 1), new Position(1, 2), new Position(2, 1) },
+                { new Position(1, 0), new Position(1, 1), new Position(2, 1), new Position(2, 2) },
+                { new Position(0, 1), new Position(1, 0), new Position(1, 1), new Position(2, 0) }
+            };
+            Move(0, 3);
+        }
     }
 }
