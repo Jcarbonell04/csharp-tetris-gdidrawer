@@ -32,7 +32,7 @@ namespace tetris_gdi_drawer
                                   , RandColor.GetColor(),};
         }
 
-        void Move(int rows, int cols)
+        public void Move(int rows, int cols)
         {
             rowOffset = rows;
             colOffset = cols;
@@ -41,7 +41,7 @@ namespace tetris_gdi_drawer
         Position[] GetCellPositions()
         {
             Position[] movedTiles = new Position[4];
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 4; i++) // 4 tiles per tetromino
             {
                 Position position = cells[rotationState, i]; // cells[x, y]
                 position.Row += rowOffset;
@@ -54,15 +54,15 @@ namespace tetris_gdi_drawer
         void Rotate()
         {
             rotationState += 1;
-            if (rotationState == cells.Length)
-                rotationState = 0;
+            if (rotationState == cells.GetLength(0)) ; // cells.GetLength(0)) = num rotation states
+            rotationState = 0;                         // cells.GetLength(1)) = num tiles per rotationd
         }
 
         void UndoRotation()
         {
             rotationState -= 1;
             if (rotationState == -1)
-                rotationState = cells.Length - 1;
+                rotationState = cells.GetLength(0) - 1;
         }
 
         public void Draw(CDrawer canvas, int offsetX, int offsetY)
