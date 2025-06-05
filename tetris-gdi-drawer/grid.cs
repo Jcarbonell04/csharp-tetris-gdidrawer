@@ -12,9 +12,9 @@ namespace tetris_gdi_drawer
         private int[,] gameGrid;
         private Color[] colors;
 
-        public int numRows { get; private set; } = 20;
-        public int numCols { get; private set; } = 10;
-        public int cellSize { get; private set; } = 30;
+        public int numRows { get; set; } = 20;
+        public int numCols { get;  set; } = 10;
+        public int cellSize { get; set; } = 30;
 
         public grid(int rows, int cols)
         {
