@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using System.Drawing;
 
 namespace tetris_gdi_drawer
-{
+{   
+    // subclasses of baseblock in block.cs 
     public class lBlock : Block
     {
         public lBlock() : base(1)
