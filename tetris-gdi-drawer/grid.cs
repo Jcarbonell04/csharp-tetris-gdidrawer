@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GDIDrawer;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -35,7 +36,7 @@ namespace tetris_gdi_drawer
 
         bool IsEmpty(int row, int col)
         {
-            if (gameGrid[row, col] == 9)
+            if (gameGrid[row, col] == 0)
                 return true;
             return false;
         }
@@ -53,6 +54,59 @@ namespace tetris_gdi_drawer
             for (int col = 0; col < numCols; col++)
             {
                 gameGrid[row, col] = 0;
+            }
+        }
+
+        void MoveRowDown(int row, int movedRows)
+        {
+            for(int col = 0; col < numCols; col++)
+            {
+                gameGrid[row + movedRows, col] = gameGrid[row, col]; // copy to new row
+                gameGrid[row, col] = 0;                              // clear original row
+            }
+        }
+
+        int ClearFullRow()
+        {
+            int completed = 0;
+            for (int row = numRows - 1; row >= 0; row--) // starts at the bottom goes to top
+            {
+                if (IsRowFull(row))
+                {
+                    ClearRow(row);
+                    completed++;
+                } 
+                else if (completed > 0)
+                {
+                    MoveRowDown(row, completed);
+                }
+            }
+            return completed;
+        }
+
+        void Reset()
+        {
+            for (int row = 0; row < numRows; row++)
+            {
+                for (int col = 0; col < numCols; col++)
+                {
+                    gameGrid[row, col] = 0;
+                }
+            }
+        }
+
+        void Draw(CDrawer canvas)
+        {
+            for (int row = 0; row < numRows; row++)
+            {
+                for (int col = 0; col < numCols; col++)
+                {
+                    int cellValue = gameGrid[row, col];
+                    Color cellColor = colors[cellValue];  // not impletmented yet
+                    canvas.AddRectangle(col * cellSize + 10 + 1, row * cellSize + 10 + 1,
+                                        cellSize - 1, cellSize - 1, cellColor);
+
+                }
             }
         }
     }
