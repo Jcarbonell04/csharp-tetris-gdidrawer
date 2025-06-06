@@ -14,10 +14,10 @@ namespace tetris_gdi_drawer
         {
             cells = new Position[4, 4]
             {
-                { new Position(0, 2), new Position(1, 0), new Position(1, 1), new Position(1, 2) },
-                { new Position(0, 1), new Position(1, 1), new Position(2, 1), new Position(2, 2) },
-                { new Position(1, 0), new Position(1, 1), new Position(1, 2), new Position(2, 0) },
-                { new Position(0, 0), new Position(0, 1), new Position(1, 1), new Position(2, 1) }
+                { new Position(0, 2), new Position(1, 0), new Position(1, 1), new Position(1, 2) }, // Rotation State 1
+                { new Position(0, 1), new Position(1, 1), new Position(2, 1), new Position(2, 2) }, // Rotation State 2
+                { new Position(1, 0), new Position(1, 1), new Position(1, 2), new Position(2, 0) }, // Rotation State 3
+                { new Position(0, 0), new Position(0, 1), new Position(1, 1), new Position(2, 1) }  // Rotation State 4
             };
             Move(0, 3);
         }
@@ -29,10 +29,10 @@ namespace tetris_gdi_drawer
         {
             cells = new Position[4, 4]
             {
-                { new Position(0, 0), new Position(1, 0), new Position(1, 1), new Position(1, 2) },
-                { new Position(0, 1), new Position(0, 2), new Position(1, 1), new Position(2, 1) },
-                { new Position(1, 0), new Position(1, 1), new Position(1, 2), new Position(2, 2) },
-                { new Position(0, 1), new Position(1, 1), new Position(2, 0), new Position(2, 1) }
+                { new Position(0, 0), new Position(1, 0), new Position(1, 1), new Position(1, 2) }, // Rotation State 1
+                { new Position(0, 1), new Position(0, 2), new Position(1, 1), new Position(2, 1) }, // Rotation State 2
+                { new Position(1, 0), new Position(1, 1), new Position(1, 2), new Position(2, 2) }, // Rotation State 3
+                { new Position(0, 1), new Position(1, 1), new Position(2, 0), new Position(2, 1) }  // Rotation State 4
             };
             Move(0, 3);
         }
@@ -44,10 +44,10 @@ namespace tetris_gdi_drawer
         {
             cells = new Position[4, 4]
             {
-                { new Position(1, 0), new Position(1, 1), new Position(1, 2), new Position(1, 3) },
-                { new Position(0, 2), new Position(1, 2), new Position(2, 2), new Position(3, 2) },
-                { new Position(2, 0), new Position(2, 1), new Position(2, 2), new Position(2, 3) },
-                { new Position(0, 1), new Position(1, 1), new Position(2, 1), new Position(3, 1) }
+                { new Position(1, 0), new Position(1, 1), new Position(1, 2), new Position(1, 3) }, // Rotation State 1
+                { new Position(0, 2), new Position(1, 2), new Position(2, 2), new Position(3, 2) }, // Rotation State 2
+                { new Position(2, 0), new Position(2, 1), new Position(2, 2), new Position(2, 3) }, // Rotation State 3
+                { new Position(0, 1), new Position(1, 1), new Position(2, 1), new Position(3, 1) }  // Rotation State 4
             };
             Move(-1, 3);
         }
@@ -59,7 +59,7 @@ namespace tetris_gdi_drawer
         {
             cells = new Position[1, 4]
             {
-                { new Position(0, 0), new Position(0, 1), new Position(1, 0), new Position(1, 1) }
+                { new Position(0, 0), new Position(0, 1), new Position(1, 0), new Position(1, 1) }  // Rotation State 1
             };
             Move(0, 4);
         }
@@ -71,10 +71,10 @@ namespace tetris_gdi_drawer
         {
             cells = new Position[4, 4]
             {
-                { new Position(0, 1), new Position(0, 2), new Position(1, 0), new Position(1, 1) },
-                { new Position(0, 1), new Position(1, 1), new Position(1, 2), new Position(2, 2) },
-                { new Position(1, 1), new Position(1, 2), new Position(2, 0), new Position(2, 1) },
-                { new Position(0, 0), new Position(1, 0), new Position(1, 1), new Position(2, 1) }
+                { new Position(0, 1), new Position(0, 2), new Position(1, 0), new Position(1, 1) }, // Rotation State 1
+                { new Position(0, 1), new Position(1, 1), new Position(1, 2), new Position(2, 2) }, // Rotation State 2
+                { new Position(1, 1), new Position(1, 2), new Position(2, 0), new Position(2, 1) }, // Rotation State 3
+                { new Position(0, 0), new Position(1, 0), new Position(1, 1), new Position(2, 1) }  // Rotation State 4
             };
             Move(0, 3);
         }
@@ -86,10 +86,10 @@ namespace tetris_gdi_drawer
         {
             cells = new Position[4, 4]
             {
-                { new Position(0, 1), new Position(1, 0), new Position(1, 1), new Position(1, 2) },
-                { new Position(0, 1), new Position(1, 1), new Position(1, 2), new Position(2, 1) },
-                { new Position(1, 0), new Position(1, 1), new Position(1, 2), new Position(2, 1) },
-                { new Position(0, 1), new Position(1, 0), new Position(1, 1), new Position(2, 1) }
+                { new Position(0, 1), new Position(1, 0), new Position(1, 1), new Position(1, 2) }, // Rotation State 1
+                { new Position(0, 1), new Position(1, 1), new Position(1, 2), new Position(2, 1) }, // Rotation State 2
+                { new Position(1, 0), new Position(1, 1), new Position(1, 2), new Position(2, 1) }, // Rotation State 3
+                { new Position(0, 1), new Position(1, 0), new Position(1, 1), new Position(2, 1) }  // Rotation State 4
             };
             Move(0, 3);
         }
@@ -101,10 +101,10 @@ namespace tetris_gdi_drawer
         {
             cells = new Position[4, 4]
             {
-                { new Position(0, 0), new Position(0, 1), new Position(1, 1), new Position(1, 2) },
-                { new Position(0, 2), new Position(1, 1), new Position(1, 2), new Position(2, 1) },
-                { new Position(1, 0), new Position(1, 1), new Position(2, 1), new Position(2, 2) },
-                { new Position(0, 1), new Position(1, 0), new Position(1, 1), new Position(2, 0) }
+                { new Position(0, 0), new Position(0, 1), new Position(1, 1), new Position(1, 2) }, // Rotation State 1
+                { new Position(0, 2), new Position(1, 1), new Position(1, 2), new Position(2, 1) }, // Rotation State 2
+                { new Position(1, 0), new Position(1, 1), new Position(2, 1), new Position(2, 2) }, // Rotation State 3
+                { new Position(0, 1), new Position(1, 0), new Position(1, 1), new Position(2, 0) }  // Rotation State 4
             };
             Move(0, 3);
         }
