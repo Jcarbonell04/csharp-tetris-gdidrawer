@@ -10,8 +10,8 @@ namespace tetris_gdi_drawer
 {
     public class grid
     {
-        private int[,] gameGrid;
-        private Color[] colors;
+        public int[,] gameGrid;
+        public Color[] colors;
 
         public int numRows { get; set; } = 20;
         public int numCols { get; set; } = 10;
@@ -27,13 +27,13 @@ namespace tetris_gdi_drawer
             cellColor = Color.White; // chnage later , no definition for getcellcolors yet
         }
 
-        void PrintGrid()
+        public void PrintGrid()
         {
             for (int row = 0; row < numRows; row++)
             {
                 for(int col = 0; col < numCols; col++)
                 {
-                    Console.WriteLine(gameGrid[row,col]);
+                    Console.Write(gameGrid[row,col]);
                 }
                 Console.WriteLine();
             }

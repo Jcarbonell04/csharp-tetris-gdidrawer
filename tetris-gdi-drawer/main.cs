@@ -17,7 +17,7 @@ namespace tetris_gdi_drawer
         private const int canvasWidth = 500;
         private CDrawer canvas; 
         private Timer gameTimer = new Timer();
-        
+        private grid gameGrid = new grid();
 
         public main()
         {
@@ -31,6 +31,7 @@ namespace tetris_gdi_drawer
             // canvas.AddText("testing", 40, Color.Red);
             DrawGrid(canvas);
             canvas.Render();
+            gameGrid.PrintGrid();   // method in grid class
         }
 
         public void DrawGrid(CDrawer canvas)
