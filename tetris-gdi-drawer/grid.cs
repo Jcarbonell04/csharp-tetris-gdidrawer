@@ -27,6 +27,18 @@ namespace tetris_gdi_drawer
             cellColor = Color.White; // chnage later , no definition for getcellcolors yet
         }
 
+        void PrintGrid()
+        {
+            for (int row = 0; row < numRows; row++)
+            {
+                for(int col = 0; col < numCols; col++)
+                {
+                    Console.WriteLine(gameGrid[row,col]);
+                }
+                Console.WriteLine();
+            }
+        }
+
         bool IsInside(int row, int col)
         {
             if (row >= 0 && row < numRows && col >= 0 && col < numCols)
