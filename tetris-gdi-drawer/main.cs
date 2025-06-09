@@ -16,14 +16,11 @@ namespace tetris_gdi_drawer
         private const int canvasHeight = 620;
         private const int canvasWidth = 500;
         private CDrawer canvas; 
-        private Timer gameTimer = new Timer();
         private grid gameGrid = new grid();
 
         public main()
         {
             InitializeComponent();
-            
-           
         }
 
         public void DrawGrid(CDrawer canvas)
@@ -53,9 +50,8 @@ namespace tetris_gdi_drawer
         private void UI_Start_Btn_Click(object sender, EventArgs e)
         {
             canvas = new CDrawer(canvasWidth, canvasHeight);
-            gameTimer.Interval = 200; // 200mS
             // gameTimer.Tick += GameUpdate_Tick;
-            // gameTimer.Start();
+            UI_GameUpdate_Tmr.Start();
 
             canvas.Clear();
             // canvas.AddText("testing", 40, Color.Red);
@@ -63,6 +59,11 @@ namespace tetris_gdi_drawer
             canvas.Render();
             gameGrid.PrintGrid();   // method in grid class
             gameGrid.Draw(canvas);
+        }
+
+        private void UI_GameUpdate_Tmr_Tick(object sender, EventArgs e)
+        {
+            // every 200mS move tetromino 
         }
     }
 }
