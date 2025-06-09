@@ -29,9 +29,10 @@ namespace tetris_gdi_drawer
 
             canvas.Clear();
             // canvas.AddText("testing", 40, Color.Red);
-            DrawGrid(canvas);
+            // DrawGrid(canvas); hardcoded
             canvas.Render();
             gameGrid.PrintGrid();   // method in grid class
+            gameGrid.Draw(canvas);
         }
 
         public void DrawGrid(CDrawer canvas)
