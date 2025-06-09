@@ -22,17 +22,8 @@ namespace tetris_gdi_drawer
         public main()
         {
             InitializeComponent();
-            canvas = new CDrawer(canvasWidth, canvasHeight);
-            gameTimer.Interval = 200; // 200mS
-            // gameTimer.Tick += GameUpdate_Tick;
-            // gameTimer.Start();
-
-            canvas.Clear();
-            // canvas.AddText("testing", 40, Color.Red);
-            // DrawGrid(canvas); hardcoded
-            canvas.Render();
-            gameGrid.PrintGrid();   // method in grid class
-            gameGrid.Draw(canvas);
+            
+           
         }
 
         public void DrawGrid(CDrawer canvas)
@@ -57,6 +48,21 @@ namespace tetris_gdi_drawer
 
                 }
             }
+        }
+
+        private void UI_Start_Btn_Click(object sender, EventArgs e)
+        {
+            canvas = new CDrawer(canvasWidth, canvasHeight);
+            gameTimer.Interval = 200; // 200mS
+            // gameTimer.Tick += GameUpdate_Tick;
+            // gameTimer.Start();
+
+            canvas.Clear();
+            // canvas.AddText("testing", 40, Color.Red);
+            // DrawGrid(canvas); hardcoded
+            canvas.Render();
+            gameGrid.PrintGrid();   // method in grid class
+            gameGrid.Draw(canvas);
         }
     }
 }
