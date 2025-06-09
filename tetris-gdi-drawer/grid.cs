@@ -24,7 +24,10 @@ namespace tetris_gdi_drawer
             numCols = 10;
             cellSize = 30;
             gameGrid = new int[numRows, numCols];
-            cellColor = Color.White; // chnage later , no definition for getcellcolors yet
+
+            colors colorList = new colors();              // create instance
+            colors = colorList.getCellColors().ToArray(); // assign list in color class
+            cellColor = colors[0]; // default color
         }
 
         public void PrintGrid()
@@ -107,7 +110,7 @@ namespace tetris_gdi_drawer
             }
         }
 
-        void Draw(CDrawer canvas)
+        public void Draw(CDrawer canvas)
         {
             for (int row = 0; row < numRows; row++)
             {
