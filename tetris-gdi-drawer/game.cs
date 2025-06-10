@@ -1,8 +1,10 @@
-﻿using System;
+﻿using GDIDrawer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace tetris_gdi_drawer
 {
@@ -99,7 +101,18 @@ namespace tetris_gdi_drawer
         // blcok inside
 
         // draw
+        void Draw(CDrawer canvas)
+        {
+            grid.Draw(canvas);
+            currentBlock.Draw(canvas, 1 + 10, 1 + 10);
 
+            if (nextBlock.id == 3)      // iBlock
+                nextBlock.Draw(canvas, 255, 290);
+            else if (nextBlock.id == 4) // oBlock
+                nextBlock.Draw(canvas, 255, 280);
+            else
+                nextBlock.Draw(canvas, 270, 270); // everythign else
+        }
 
     }
 }
