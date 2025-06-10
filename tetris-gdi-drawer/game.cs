@@ -70,7 +70,36 @@ namespace tetris_gdi_drawer
         void MoveLeft()
         {
             currentBlock.Move(0, -1);
+            // neeed to implement block fits and blockinside
 
         }
+
+        // move right
+
+        // move down
+
+        // lock block
+
+        // reset
+
+        // block fits
+        bool BlockFits()
+        {
+            Block tiles = currentBlock.GetCellPositions();
+            for var tile in tiles {
+                if grid.
+
+            // having a brain fary i will come back to this
+            }
+            return true;
+        }
+
+        // rotate
+
+        // blcok inside
+
+        // draw
+
+
     }
 }
