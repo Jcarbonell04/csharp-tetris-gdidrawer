@@ -8,6 +8,14 @@ namespace tetris_gdi_drawer
 {
     public class game
     {
+        Random rand = new Random();
+        grid grid;
+        List<Block> blocks = new List<Block>();
+        Block currentBlock; // get random block
+        Block nextBlock; // get random block
+        bool gameOver;
+        int score;
+
         public game()
         {
             grid grid = new grid();
@@ -21,10 +29,48 @@ namespace tetris_gdi_drawer
                 new tBlock(),
                 new zBlock()
             };
-            Block currentBlock; // get random block
-            Block nextBlock; // get random block
-            bool gameOver = false;
-            int score = 0;
+            currentBlock = GetRandomBlock(); // get random block
+            nextBlock = GetRandomBlock(); // get random block
+            gameOver = false;
+            score = 0;
+        }
+
+        void UpdateScore(int linesCleared, int moveDownPoints)
+        {
+            if (linesCleared == 1)
+                score += 100;
+            else if (linesCleared == 2)
+                score += 200;
+            else if (linesCleared == 3)
+                score += 300;
+            else if (linesCleared == 4)
+                score += 500;
+            score += moveDownPoints;
+        }
+
+        Block GetRandomBlock()
+        {
+            if (blocks.Count() == 0)
+            {
+                blocks = new List<Block>
+                {
+                    new iBlock(),
+                    new jBlock(),
+                    new lBlock(),
+                    new oBlock(),
+                    new sBlock(),
+                    new tBlock(),
+                    new zBlock()
+                };
+            }
+            Block block = blocks[rand.Next(blocks.Count)];
+            return block;
+        }
+
+        void MoveLeft()
+        {
+            currentBlock.Move(0, -1);
+
         }
     }
 }
