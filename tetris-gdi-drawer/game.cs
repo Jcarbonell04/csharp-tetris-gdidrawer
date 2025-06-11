@@ -83,6 +83,24 @@ namespace tetris_gdi_drawer
         // lock block
 
         // reset
+        void Reset()
+        {
+            grid.Reset();
+            blocks = new List<Block>
+            {
+                new iBlock(),
+                new jBlock(),
+                new lBlock(),
+                new oBlock(),
+                new sBlock(),
+                new tBlock(),
+                new zBlock()
+            };
+            currentBlock = GetRandomBlock();
+            nextBlock = GetRandomBlock();
+            score = 0;
+
+        }
 
         // block fits
         bool BlockFits()
