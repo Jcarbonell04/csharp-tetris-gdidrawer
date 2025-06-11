@@ -38,7 +38,7 @@ namespace tetris_gdi_drawer
             colOffset = cols;
         }
 
-        Position[] GetCellPositions()
+        public Position[] GetCellPositions()
         {
             Position[] movedTiles = new Position[4];
             for (int i = 0; i < 4; i++) // 4 tiles per tetromino

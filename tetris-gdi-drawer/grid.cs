@@ -99,7 +99,7 @@ namespace tetris_gdi_drawer
             return completed;
         }
 
-        void Reset()
+        public void Reset()
         {
             for (int row = 0; row < numRows; row++)
             {
