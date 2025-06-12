@@ -66,21 +66,48 @@ namespace tetris_gdi_drawer
                 };
             }
             Block block = blocks[rand.Next(blocks.Count)];
+            blocks.Remove(block); // do not forget, remove the block from the lsit
             return block;
         }
 
-        void MoveLeft()
+        public void MoveLeft()
         {
             currentBlock.Move(0, -1);
-            // neeed to implement block fits and blockinside
-
+            if (!BlockInside() || !BlockFits())
+                currentBlock.Move(0, 1);
         }
 
         // move right
+         public void MoveRight()
+        {
+            currentBlock.Move(0, 1);
+            if (!BlockInside() || !BlockFits())
+                currentBlock.Move(0, -1);
+        }
 
         // move down
+        public void MoveDown()
+        {
+            currentBlock.Move(1, 0);
+            if (!BlockInside() || !BlockFits())
+                currentBlock.Move(-1, 0);
+        }
 
         // lock block
+        void LockBlock()
+        {
+            Position[] tiles = currentBlock.GetCellPositions();
+            foreach (Position tile in tiles)
+                grid.gameGrid[tile.Row,tile.Col] = currentBlock.id;
+            currentBlock = nextBlock;
+            nextBlock = GetRandomBlock();
+            int rowsCleared = grid.ClearFullRow();
+
+            if (rowsCleared > 0)
+                UpdateScore(rowsCleared, 0);
+            if (!BlockFits())
+                gameOver = false;
+        }
 
         // reset
         void Reset()
@@ -105,18 +132,33 @@ namespace tetris_gdi_drawer
         // block fits
         bool BlockFits()
         {
-            Block tiles = currentBlock.GetCellPositions();
-            for var tile in tiles {
-                if grid.
-
-            // having a brain fary i will come back to this
+            Position[] tiles = currentBlock.GetCellPositions();
+            foreach (var tile in tiles) {
+                if (!grid.IsEmpty(tile.Row, tile.Col))
+                    return false;
             }
             return true;
         }
 
         // rotate
+        void Rotate()
+        {
+            currentBlock.Rotate();
+            if (!BlockInside() || !BlockFits())
+                currentBlock.UndoRotation();
+        }
 
         // blcok inside
+        bool BlockInside()
+        {
+            Position[] tiles = currentBlock.GetCellPositions();
+            foreach (var tile in tiles)
+            {
+                if (!grid.IsInside(tile.Row, tile.Col))
+                    return false;
+            }
+            return true;
+        }
 
         // draw
         void Draw(CDrawer canvas)
