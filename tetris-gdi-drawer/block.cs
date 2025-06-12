@@ -51,14 +51,14 @@ namespace tetris_gdi_drawer
             return movedTiles;
         }
 
-        void Rotate()
+        public void Rotate()
         {
             rotationState += 1;
             if (rotationState == cells.GetLength(0)) ; // cells.GetLength(0)) = num rotation states
             rotationState = 0;                         // cells.GetLength(1)) = num tiles per rotationd
         }
 
-        void UndoRotation()
+        public void UndoRotation()
         {
             rotationState -= 1;
             if (rotationState == -1)
