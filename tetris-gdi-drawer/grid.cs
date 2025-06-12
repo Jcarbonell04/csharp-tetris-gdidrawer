@@ -42,14 +42,14 @@ namespace tetris_gdi_drawer
             }
         }
 
-        bool IsInside(int row, int col)
+        public bool IsInside(int row, int col)
         {
             if (row >= 0 && row < numRows && col >= 0 && col < numCols)
                 return true;
             return false;
         }
 
-        bool IsEmpty(int row, int col)
+        public bool IsEmpty(int row, int col)
         {
             if (gameGrid[row, col] == 0)
                 return true;
@@ -81,7 +81,7 @@ namespace tetris_gdi_drawer
             }
         }
 
-        int ClearFullRow()
+        public int ClearFullRow()
         {
             int completed = 0;
             for (int row = numRows - 1; row >= 0; row--) // starts at the bottom goes to top
