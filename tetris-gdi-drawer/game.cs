@@ -15,7 +15,7 @@ namespace tetris_gdi_drawer
         List<Block> blocks = new List<Block>();
         Block currentBlock; // get random block
         Block nextBlock; // get random block
-        bool gameOver;
+        public bool gameOver;
         int score;
 
         public game()
