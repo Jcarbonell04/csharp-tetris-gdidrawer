@@ -17,10 +17,25 @@ namespace tetris_gdi_drawer
         private const int canvasWidth = 500;
         private CDrawer canvas; 
         private grid gameGrid = new grid();
+        private game game =  new game();
 
         public main()
         {
             InitializeComponent();
+
+            while (true)
+            {
+                    // if key down
+                    game.MoveDown();
+
+                    // if key left
+                    game.MoveLeft();
+
+                    // if key down
+                    game.MoveRight();
+
+                // timer tick will use move down every 200mS
+            }
         }
 
         public void DrawGrid(CDrawer canvas)
@@ -64,6 +79,9 @@ namespace tetris_gdi_drawer
         private void UI_GameUpdate_Tmr_Tick(object sender, EventArgs e)
         {
             // every 200mS move tetromino 
+            // canvas.KeyboardEvent  IDK HOW TTO USE THIS
+            if (!game.gameOver) // game still running
+                game.MoveDown();
         }
     }
 }
