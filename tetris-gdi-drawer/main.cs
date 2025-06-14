@@ -26,15 +26,19 @@ namespace tetris_gdi_drawer
             while (true)
             {
                     // if key down
+                    cQanvas.KeyboardEvent
                     game.MoveDown();
 
-                    // if key left
+                // if key left
+                canvas.KeyboardEvent
                     game.MoveLeft();
 
-                    // if key down
+                // if key down
+                canvas.KeyboardEvent
                     game.MoveRight();
 
                 // timer tick will use move down every 200mS
+
             }
         }
 
