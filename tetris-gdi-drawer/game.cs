@@ -20,8 +20,8 @@ namespace tetris_gdi_drawer
 
         public game()
         {
-            grid grid = new grid();
-            List<Block> blocks = new List<Block> 
+            grid = new grid();
+            blocks = new List<Block> 
             {
                 new iBlock(),
                 new jBlock(),
@@ -37,7 +37,7 @@ namespace tetris_gdi_drawer
             score = 0;
         }
 
-        void UpdateScore(int linesCleared, int moveDownPoints)
+        public void UpdateScore(int linesCleared, int moveDownPoints)
         {
             if (linesCleared == 1)
                 score += 100;
@@ -110,7 +110,7 @@ namespace tetris_gdi_drawer
         }
 
         // reset
-        void Reset()
+        public void Reset()
         {
             grid.Reset();
             blocks = new List<Block>
@@ -141,7 +141,7 @@ namespace tetris_gdi_drawer
         }
 
         // rotate
-        void Rotate()
+        public void Rotate()
         {
             currentBlock.Rotate();
             if (!BlockInside() || !BlockFits())
@@ -161,7 +161,7 @@ namespace tetris_gdi_drawer
         }
 
         // draw
-        void Draw(CDrawer canvas)
+        public void Draw(CDrawer canvas)
         {
             grid.Draw(canvas);
             currentBlock.Draw(canvas, 1 + 10, 1 + 10);

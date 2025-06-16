@@ -11,7 +11,7 @@ namespace tetris_gdi_drawer
     public class grid
     {
         public int[,] gameGrid;
-        public Color[] colors;
+        public Color[] cellColors;
 
         public int numRows { get; set; } = 20;
         public int numCols { get; set; } = 10;
@@ -26,8 +26,8 @@ namespace tetris_gdi_drawer
             gameGrid = new int[numRows, numCols];
 
             colors colorList = new colors();              // create instance
-            colors = colorList.getCellColors().ToArray(); // assign list in color class
-            cellColor = colors[0]; // default color
+            cellColors = colorList.getCellColors().ToArray(); // assign list in color class
+            cellColor = cellColors[0]; // default color
         }
 
         public void PrintGrid()
@@ -117,7 +117,7 @@ namespace tetris_gdi_drawer
                 for (int col = 0; col < numCols; col++)
                 {
                     int cellValue = gameGrid[row, col];
-                    Color cellColor = colors[cellValue];  // not impletmented yet
+                    Color cellColor = cellColors[cellValue];  // not impletmented yet
                     canvas.AddRectangle(col * cellSize + 10 + 1, row * cellSize + 10 + 1,
                                         cellSize - 1, cellSize - 1, cellColor);
 
