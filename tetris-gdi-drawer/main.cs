@@ -22,25 +22,39 @@ namespace tetris_gdi_drawer
         public main()
         {
             InitializeComponent();
-
-            while (true)
-            {
-                    // if key down
-                    canvas.KeyboardEvent
-                    game.MoveDown();
-
-                // if key left
-                canvas.KeyboardEvent
-                    game.MoveLeft();
-
-                // if key down
-                canvas.KeyboardEvent
-                    game.MoveRight();
-
-                // timer tick will use move down every 200mS
-
-            }
+            KeyPreview = true;
         }
+
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            MessageBox.Show($"Pressed: {e.KeyCode}");
+            if (game.gameOver)
+            {
+                game.gameOver = false;
+                game.Reset();
+                return;
+            }
+
+            switch (e.KeyCode)
+            {
+                case Keys.Left:
+                    game.MoveLeft();
+                    break;
+                case Keys.Right:
+                    game.MoveRight();
+                    break;
+                case Keys.Down:
+                    game.MoveDown();
+                    game.UpdateScore(0, 1);
+                    break;
+                case Keys.Up:
+                    game.Rotate();
+                    break;
+            }
+
+            Redraw(); // like pygame.display.update()
+        }
+
 
         public void DrawGrid(CDrawer canvas)
         {
@@ -83,9 +97,17 @@ namespace tetris_gdi_drawer
         private void UI_GameUpdate_Tmr_Tick(object sender, EventArgs e)
         {
             // every 200mS move tetromino 
-            // canvas.KeyboardEvent  IDK HOW TTO USE THIS
             if (!game.gameOver) // game still running
                 game.MoveDown();
         }
+
+        private void Redraw()
+        {
+            canvas.Clear(); // like screen.fill()
+            game.Draw(canvas); // custom draw logic for grid + block
+            canvas.Render();
+        }
+
+      
     }
 }
