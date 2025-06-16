@@ -56,6 +56,7 @@
             this.Controls.Add(this.UI_Start_Btn);
             this.Name = "main";
             this.Text = "Form1";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.ResumeLayout(false);
 
         }
