@@ -26,7 +26,7 @@ namespace tetris_gdi_drawer
             while (true)
             {
                     // if key down
-                    cQanvas.KeyboardEvent
+                    canvas.KeyboardEvent
                     game.MoveDown();
 
                 // if key left
