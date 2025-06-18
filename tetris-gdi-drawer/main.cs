@@ -23,11 +23,13 @@ namespace tetris_gdi_drawer
         {
             InitializeComponent();
             KeyPreview = true;
+            Console.WriteLine("ic");
         }
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
         {
-            MessageBox.Show($"Pressed: {e.KeyCode}");
+            Console.WriteLine("keydown");
+            // MessageBox.Show($"Pressed: {e.KeyCode}");
             if (game.gameOver)
             {
                 game.gameOver = false;
@@ -39,6 +41,7 @@ namespace tetris_gdi_drawer
             {
                 case Keys.Left:
                     game.MoveLeft();
+                    Console.WriteLine("left");
                     break;
                 case Keys.Right:
                     game.MoveRight();
