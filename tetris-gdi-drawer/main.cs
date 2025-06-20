@@ -45,13 +45,16 @@ namespace tetris_gdi_drawer
                     break;
                 case Keys.Right:
                     game.MoveRight();
+                    Console.WriteLine("right");
                     break;
                 case Keys.Down:
                     game.MoveDown();
                     game.UpdateScore(0, 1);
+                    Console.WriteLine("down");
                     break;
                 case Keys.Up:
                     game.Rotate();
+                    Console.WriteLine("rotATW");
                     break;
             }
 
