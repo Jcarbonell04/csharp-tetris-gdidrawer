@@ -88,9 +88,11 @@ namespace tetris_gdi_drawer
         // move down
         public void MoveDown()
         {
+            Console.WriteLine("DOWN 1");
             currentBlock.Move(1, 0);
             if (!BlockInside() || !BlockFits())
                 currentBlock.Move(-1, 0);
+            LockBlock();
         }
 
         // lock block
