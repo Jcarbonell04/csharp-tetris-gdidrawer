@@ -17,7 +17,7 @@ namespace tetris_gdi_drawer
         public int rowOffset;
         public int colOffset;
         public int rotationState;
-        public Color[] colors; // get from color class later
+        public Color[] color; // get from color class later
 
         public Block(int id)
         {
@@ -27,9 +27,9 @@ namespace tetris_gdi_drawer
             rowOffset = 0;
             colOffset = 0;
             rotationState = 0;
-            colors = new Color[] {RandColor.GetColor(), RandColor.GetColor(), RandColor.GetColor()
-                                  , RandColor.GetColor(), RandColor.GetColor(), RandColor.GetColor()
-                                  , RandColor.GetColor(),};
+            colors colorsList = new colors();
+            color = colorsList.getCellColors().ToArray();
+
         }
 
         public void Move(int rows, int cols)
@@ -69,9 +69,18 @@ namespace tetris_gdi_drawer
         {
             foreach (Position tile in GetCellPositions())
             {
-                canvas.AddRectangle(tile.Col * cellSize + offsetX, tile.Row * cellSize + offsetY
-                                    , cellSize - 1, cellSize - 1, colors[id]);
+                int x = tile.Col * cellSize + offsetX;
+                int y = tile.Row * cellSize + offsetY;
+                int w = cellSize - 1;
+                int h = cellSize - 1;
+                if (x > 0 && x + w <= canvas.ScaledWidth && y > 0 && y + h <= canvas.ScaledHeight) // pygame prolly check and doesnt print outsdie so you gotta check if teh block fits in the canvas here
+                {
+                    canvas.AddRectangle(x, y, w, h, color[id]);    // draw tetrimino
+                }
+
+               
             }
+            Console.WriteLine($"y: {GetCellPositions().First().Row}");
         }
 
     }
