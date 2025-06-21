@@ -45,7 +45,7 @@
             // 
             // UI_GameUpdate_Tmr
             // 
-            this.UI_GameUpdate_Tmr.Interval = 200;
+            this.UI_GameUpdate_Tmr.Interval = 5000;
             this.UI_GameUpdate_Tmr.Tick += new System.EventHandler(this.UI_GameUpdate_Tmr_Tick);
             // 
             // main
@@ -56,7 +56,6 @@
             this.Controls.Add(this.UI_Start_Btn);
             this.Name = "main";
             this.Text = "Form1";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.ResumeLayout(false);
 
         }
