@@ -24,11 +24,17 @@ namespace tetris_gdi_drawer
             InitializeComponent();
             KeyPreview = true;
             Console.WriteLine("ic");
+
         }
 
-        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        private void Canvas_KeyboardEvent(bool bIsDown, Keys keyCode, CDrawer dr)
         {
-            Console.WriteLine("keydown");
+            if (!bIsDown) 
+            { 
+                return; 
+            }
+
+            //Console.WriteLine("keydown");
             // MessageBox.Show($"Pressed: {e.KeyCode}");
             if (game.gameOver)
             {
@@ -37,7 +43,7 @@ namespace tetris_gdi_drawer
                 return;
             }
 
-            switch (e.KeyCode)
+            switch (keyCode)
             {
                 case Keys.Left:
                     game.MoveLeft();
@@ -49,7 +55,7 @@ namespace tetris_gdi_drawer
                     break;
                 case Keys.Down:
                     game.MoveDown();
-                    game.UpdateScore(0, 1);
+                    //game.UpdateScore(0, 1);
                     Console.WriteLine("down");
                     break;
                 case Keys.Up:
@@ -59,52 +65,31 @@ namespace tetris_gdi_drawer
             }
 
             Redraw(); // like pygame.display.update()
-        }
 
-
-        public void DrawGrid(CDrawer canvas)
-        {
-            int cols = 10;
-            int rows = 20;
-            int cellSize = 30;  
-            int offsetX = 10;   
-            int offsetY = 10;  
-
-            Color gridColor = Color.LightBlue;
-
-            for (int row = 0; row < rows; row++)
-            {
-                for (int col = 0; col < cols; col++)
-                {
-                    // int cellValue = grid[row, col]; colors[cellValue])
-                    canvas.AddRectangle(offsetX + col * cellSize + 1,
-                    offsetY + row * cellSize + 1,
-                    cellSize - 1, cellSize - 1,
-                    gridColor);
-
-                }
-            }
+            
         }
 
         private void UI_Start_Btn_Click(object sender, EventArgs e)
         {
             canvas = new CDrawer(canvasWidth, canvasHeight);
-            // gameTimer.Tick += GameUpdate_Tick;
             UI_GameUpdate_Tmr.Start();
 
             canvas.Clear();
             // canvas.AddText("testing", 40, Color.Red);
-            // DrawGrid(canvas); hardcoded
             canvas.Render();
             gameGrid.PrintGrid();   // method in grid class
             gameGrid.Draw(canvas);
+
+            canvas.KeyboardEvent += Canvas_KeyboardEvent;
         }
 
         private void UI_GameUpdate_Tmr_Tick(object sender, EventArgs e)
         {
             // every 200mS move tetromino 
+            Console.WriteLine("200");
             if (!game.gameOver) // game still running
                 game.MoveDown();
+            Redraw();
         }
 
         private void Redraw()
