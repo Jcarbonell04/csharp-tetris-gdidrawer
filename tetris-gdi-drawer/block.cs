@@ -22,13 +22,13 @@ namespace tetris_gdi_drawer
         public Block(int id)
         {
             this.id = id;
-            cells = new Position[4,4];
+            cells = new Position[4,4]; //4 x4
             cellSize = 30;
             rowOffset = 0;
             colOffset = 0;
             rotationState = 0;
             colors colorsList = new colors();
-            color = colorsList.getCellColors().ToArray();
+            color = colorsList.getCellColors().ToArray(); // is this evenr ight
 
         }
 
