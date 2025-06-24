@@ -11,7 +11,7 @@ using GDIDrawer;
 
 namespace tetris_gdi_drawer
 {
-    public partial class main : Form
+    public partial class main : Form // printes scaled idk why
     {
         private const int canvasHeight = 620;
         private const int canvasWidth = 500;
