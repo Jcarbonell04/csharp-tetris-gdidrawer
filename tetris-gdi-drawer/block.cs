@@ -76,8 +76,8 @@ namespace tetris_gdi_drawer
         public void Rotate()
         {
             rotationState += 1;
-            if (rotationState == cells.GetLength(0)) ; // cells.GetLength(0)) = num rotation states
-            rotationState = 0;                         // cells.GetLength(1)) = num tiles per rotationd
+            if (rotationState == cells.GetLength(0))   // cells.GetLength(0)) = num rotation states
+                rotationState = 0;                         // cells.GetLength(1)) = num tiles per rotationd
         }
 
         /// <summary>

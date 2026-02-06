@@ -12,6 +12,7 @@ namespace tetris_gdi_drawer
 {
     public class colors
     {
+        // VARIBLE DECLARATIONS
         private Color darkGrey = Color.FromArgb(26, 31, 40);
         private Color orange = Color.FromArgb(226, 116, 17);
         private Color darkBlue = Color.FromArgb(44, 44, 127);
@@ -21,6 +22,11 @@ namespace tetris_gdi_drawer
         private Color purple = Color.FromArgb(166, 0, 247);
         private Color red = Color.FromArgb(232, 18, 18);
 
+        /// <summary>
+        /// Returns a list of all block colors in order.
+        /// The order can be used as IDs when drawing tetrominoes.
+        /// </summary>
+        /// <returns>List of Colors for each tetromino</returns>
         public List<Color> getCellColors()
         {
             return new List<Color>

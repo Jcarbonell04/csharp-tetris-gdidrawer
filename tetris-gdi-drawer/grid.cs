@@ -43,7 +43,7 @@ namespace tetris_gdi_drawer
         }
 
         /// <summary>
-        /// 
+        /// print grid to console
         /// </summary>
         public void PrintGrid()
         {
@@ -57,6 +57,12 @@ namespace tetris_gdi_drawer
             }
         }
 
+        /// <summary>
+        /// Check if a cell is inside the grid bounds
+        /// </summary>
+        /// <param name="row"></param>
+        /// <param name="col"></param>
+        /// <returns></returns>
         public bool IsInside(int row, int col)
         {
             if (row >= 0 && row < numRows && col >= 0 && col < numCols)
@@ -64,6 +70,12 @@ namespace tetris_gdi_drawer
             return false;
         }
 
+        /// <summary>
+        /// Check if a cell is empty
+        /// </summary>
+        /// <param name="row"></param>
+        /// <param name="col"></param>
+        /// <returns></returns>
         public bool IsEmpty(int row, int col)
         {
             if (gameGrid[row, col] == 0)
@@ -71,6 +83,11 @@ namespace tetris_gdi_drawer
             return false;
         }
 
+        /// <summary>
+        /// Check if a row is completely filled
+        /// </summary>
+        /// <param name="row"></param>
+        /// <returns></returns>
         bool IsRowFull(int row)
         {
             for (int col = 0; col < numCols; col++)
@@ -79,6 +96,10 @@ namespace tetris_gdi_drawer
             return true;
         }
 
+        /// <summary>
+        /// Sets cell row to empty 
+        /// </summary>
+        /// <param name="row"></param>
         void ClearRow(int row)
         {
             for (int col = 0; col < numCols; col++)
@@ -87,6 +108,11 @@ namespace tetris_gdi_drawer
             }
         }
 
+        /// <summary>
+        /// Move a row down by a specified number of rows
+        /// </summary>
+        /// <param name="row"></param>
+        /// <param name="movedRows"></param>
         void MoveRowDown(int row, int movedRows)
         {
             for(int col = 0; col < numCols; col++)
@@ -96,6 +122,10 @@ namespace tetris_gdi_drawer
             }
         }
 
+        /// <summary>
+        /// Clear all full rows and move upper rows down
+        /// </summary>
+        /// <returns>Returns the number of completed rows</returns>
         public int ClearFullRow()
         {
             int completed = 0;
@@ -114,6 +144,9 @@ namespace tetris_gdi_drawer
             return completed;
         }
 
+        /// <summary>
+        /// Reset the entire grid to empty
+        /// </summary>
         public void Reset()
         {
             for (int row = 0; row < numRows; row++)
@@ -125,6 +158,10 @@ namespace tetris_gdi_drawer
             }
         }
 
+        /// <summary>
+        /// Draw the grid and its cells on a GDIDrawer canvas
+        /// </summary>
+        /// <param name="canvas">canvas to draw on</param>
         public void Draw(CDrawer canvas)
         {
             for (int row = 0; row < numRows; row++)
@@ -135,7 +172,6 @@ namespace tetris_gdi_drawer
                     Color cellColor = cellColors[cellValue];  // not impletmented yet
                     canvas.AddRectangle(col * cellSize + 10 + 1, row * cellSize + 10 + 1,
                                         cellSize - 1, cellSize - 1, cellColor);
-
                 }
             }
         }
