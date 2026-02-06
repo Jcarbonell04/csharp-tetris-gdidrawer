@@ -101,45 +101,24 @@ namespace tetris_gdi_drawer
         /// <param name="e"></param>
         private void UI_Start_Btn_Click(object sender, EventArgs e)
         {
-            // Get the screen the form is currently on
-            Screen currentScreen = Screen.FromControl(this);
-            Rectangle workArea = currentScreen.WorkingArea;
+            Screen currentScreen = Screen.FromControl(this); // current focus
+            Rectangle workArea = currentScreen.WorkingArea; // Rectangle gives Left, Right, Top, Bottom, Width, Height
 
             _canvas = new CDrawer(_canvasWidth, _canvasHeight);
 
-            // Center canvas on THIS screen
+            // center _canvas on the screen the main for was on
             int canvasX = workArea.Left + (workArea.Width - _canvasWidth) / 2;
             int canvasY = workArea.Top + (workArea.Height - _canvasHeight) / 2;
             _canvas.Position = new Point(canvasX, canvasY);
 
-            // Place form to the left of the canvas
-            int gap = 20;
+            int gap = 20; // adjust accordingly
             int formX = canvasX - this.Width - gap;
             int formY = canvasY;
 
-            // Clamp so it never leaves the monitor
-            formX = Math.Max(workArea.Left, formX);
-            formY = Math.Max(workArea.Top, formY);
+            formX = Math.Max(workArea.Left, formX); // clamp forms top left to the topleft of the monitor
+            formY = Math.Max(workArea.Top, formY);  // If form goes above the top of the monitor, clamp it to the top.
 
             this.Location = new Point(formX, formY);
-
-            //// Center canvas on screen
-            //int canvasX = (screenWidth - _canvasWidth) / 2;
-            //int canvasY = (screenHeight - _canvasHeight) / 2;
-            //_canvas.Position = new Point(canvasX, canvasY);
-
-            //// Move form to the LEFT of the canvas
-            //int gap = 20; // space between form and canvas
-            //int formX = canvasX - this.Width - gap;
-            //int formY = canvasY; // align tops (or tweak if you want)
-
-            //this.Location = new Point(formX, formY);
-
-            //int x = (screenWidth - _canvasWidth) / 2;
-            //int y = (screenHeight - _canvasHeight) / 2;
-            //_canvas.Position = new Point(x, y);
-
-            ////this.Location = new Point(_canvasWidth, _canvasHeight);
 
             UI_GameUpdate_Tmr.Start();
 
