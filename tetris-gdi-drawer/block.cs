@@ -82,6 +82,5 @@ namespace tetris_gdi_drawer
             }
             Console.WriteLine($"y: {GetCellPositions().First().Row}");
         }
-
     }
 }

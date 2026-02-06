@@ -36,9 +36,9 @@ namespace tetris_gdi_drawer
 
             //Console.WriteLine("keydown");
             // MessageBox.Show($"Pressed: {e.KeyCode}");
-            if (game.gameOver)
+            if (game._gameOver)
             {
-                game.gameOver = false;
+                game._gameOver = false;
                 game.Reset();
                 return;
             }
@@ -54,7 +54,7 @@ namespace tetris_gdi_drawer
                     Console.WriteLine("right");
                     break;
                 case Keys.Down:
-                    game.MoveDown();
+                    game.SoftDrop();
                     //game.UpdateScore(0, 1);
                     Console.WriteLine("down");
                     break;
@@ -87,8 +87,8 @@ namespace tetris_gdi_drawer
         {
             // every 200mS move tetromino 
             Console.WriteLine("200");
-            if (!game.gameOver) // game still running
-                game.MoveDown();
+            if (!game._gameOver) // game still running
+                game.SoftDrop();
             Redraw();
         }
 

@@ -3,36 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2E92DC67-43F8-4746-9667-23D7FCB3814A}|tetris-gdi-drawer.csproj|C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E92DC67-43F8-4746-9667-23D7FCB3814A}|tetris-gdi-drawer.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E92DC67-43F8-4746-9667-23D7FCB3814A}|tetris-gdi-drawer.csproj|C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E92DC67-43F8-4746-9667-23D7FCB3814A}|tetris-gdi-drawer.csproj|solutionrelative:game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E92DC67-43F8-4746-9667-23D7FCB3814A}|tetris-gdi-drawer.csproj|C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2E92DC67-43F8-4746-9667-23D7FCB3814A}|tetris-gdi-drawer.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E92DC67-43F8-4746-9667-23D7FCB3814A}|tetris-gdi-drawer.csproj|c:\\users\\pc\\documents\\github\\csharp-tetris\\tetris-gdi-drawer\\block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2E92DC67-43F8-4746-9667-23D7FCB3814A}|tetris-gdi-drawer.csproj|C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E92DC67-43F8-4746-9667-23D7FCB3814A}|tetris-gdi-drawer.csproj|solutionrelative:block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E92DC67-43F8-4746-9667-23D7FCB3814A}|tetris-gdi-drawer.csproj|C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\blocks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E92DC67-43F8-4746-9667-23D7FCB3814A}|tetris-gdi-drawer.csproj|solutionrelative:blocks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2E92DC67-43F8-4746-9667-23D7FCB3814A}|tetris-gdi-drawer.csproj|C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\color.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E92DC67-43F8-4746-9667-23D7FCB3814A}|tetris-gdi-drawer.csproj|solutionrelative:color.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E92DC67-43F8-4746-9667-23D7FCB3814A}|tetris-gdi-drawer.csproj|C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E92DC67-43F8-4746-9667-23D7FCB3814A}|tetris-gdi-drawer.csproj|solutionrelative:main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E92DC67-43F8-4746-9667-23D7FCB3814A}|tetris-gdi-drawer.csproj|C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E92DC67-43F8-4746-9667-23D7FCB3814A}|tetris-gdi-drawer.csproj|solutionrelative:game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E92DC67-43F8-4746-9667-23D7FCB3814A}|tetris-gdi-drawer.csproj|c:\\users\\pc\\documents\\github\\csharp-tetris\\tetris-gdi-drawer\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E92DC67-43F8-4746-9667-23D7FCB3814A}|tetris-gdi-drawer.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2E92DC67-43F8-4746-9667-23D7FCB3814A}|tetris-gdi-drawer.csproj|C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\grid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E92DC67-43F8-4746-9667-23D7FCB3814A}|tetris-gdi-drawer.csproj|solutionrelative:grid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E92DC67-43F8-4746-9667-23D7FCB3814A}|tetris-gdi-drawer.csproj|C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\blocks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E92DC67-43F8-4746-9667-23D7FCB3814A}|tetris-gdi-drawer.csproj|solutionrelative:blocks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,20 +34,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "grid.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\grid.cs",
               "RelativeDocumentMoniker": "grid.cs",
               "ToolTip": "C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\grid.cs",
               "RelativeToolTip": "grid.cs",
-              "ViewState": "AQIAAGIAAAAAAAAAAAAuwHkAAAAoAAAA",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAawDUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-02T20:21:29.325Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -95,28 +88,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "main.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\main.cs",
               "RelativeDocumentMoniker": "main.cs",
               "ToolTip": "C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\main.cs",
               "RelativeToolTip": "main.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA+AAAA",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAiwA0AAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-21T01:17:28.833Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "main.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\main.Designer.cs",
-              "RelativeDocumentMoniker": "main.Designer.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\main.Designer.cs",
-              "RelativeToolTip": "main.Designer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T04:01:17.006Z",
               "EditorCaption": ""
             },
             {
@@ -127,58 +107,49 @@
               "RelativeDocumentMoniker": "color.cs",
               "ToolTip": "C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\color.cs",
               "RelativeToolTip": "color.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAA6AAAA",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T16:56:27.737Z"
+              "WhenOpened": "2025-06-06T16:56:27.737Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "block.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\block.cs",
               "RelativeDocumentMoniker": "block.cs",
               "ToolTip": "C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\block.cs",
               "RelativeToolTip": "block.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAtAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-02T20:29:31.784Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "main.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\main.cs",
-              "RelativeDocumentMoniker": "main.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\main.cs [Design]",
-              "RelativeToolTip": "main.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T01:17:24.821Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "game.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\game.cs",
-              "RelativeDocumentMoniker": "game.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\game.cs",
-              "RelativeToolTip": "game.cs",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAcwHEAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T20:29:22.808Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "blocks.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\blocks.cs",
               "RelativeDocumentMoniker": "blocks.cs",
               "ToolTip": "C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\blocks.cs",
               "RelativeToolTip": "blocks.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABSAAAA",
+              "ViewState": "AgIAADcAAAAAAAAAAAAcwBgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T20:29:41.282Z"
+              "WhenOpened": "2025-06-02T20:29:41.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "game.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\game.cs",
+              "RelativeDocumentMoniker": "game.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\Github\\csharp-tetris\\tetris-gdi-drawer\\game.cs*",
+              "RelativeToolTip": "game.cs*",
+              "ViewState": "AgIAALwAAAAAAAAAAAAlwMAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T20:29:22.808Z",
+              "EditorCaption": ""
             }
           ]
         }
