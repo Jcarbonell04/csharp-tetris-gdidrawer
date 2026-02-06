@@ -1,23 +1,25 @@
-﻿using System;
+﻿//***********************************************************************************
+// Program: color.cs
+// Description: Defines the Block class used for Tetris tetrominoes, including
+//              tile positions, rotation states, movement, and drawing logic.
+// Author: Jaedyn Carbonell
+//***********************************************************************************
+
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace tetris_gdi_drawer
 {
     public class colors
     {
-        public Color darkGrey = Color.FromArgb(26, 31, 40);
-        public Color orange = Color.FromArgb(226, 116, 17);
-        public Color darkBlue = Color.FromArgb(44, 44, 127);
-        public Color lightBlue = Color.FromArgb(59, 85, 162);
-        public Color yellow = Color.FromArgb(237, 234, 4);
-        public Color green = Color.FromArgb(47, 230, 23);
-        public Color purple = Color.FromArgb(166, 0, 247);
-        public Color red = Color.FromArgb(232, 18, 18);
+        private Color darkGrey = Color.FromArgb(26, 31, 40);
+        private Color orange = Color.FromArgb(226, 116, 17);
+        private Color darkBlue = Color.FromArgb(44, 44, 127);
+        private Color lightBlue = Color.FromArgb(59, 85, 162);
+        private Color yellow = Color.FromArgb(237, 234, 4);
+        private Color green = Color.FromArgb(47, 230, 23);
+        private Color purple = Color.FromArgb(166, 0, 247);
+        private Color red = Color.FromArgb(232, 18, 18);
 
         public List<Color> getCellColors()
         {

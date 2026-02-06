@@ -1,35 +1,50 @@
-﻿using GDIDrawer;
+﻿//***********************************************************************************
+// Program: grid.cs
+// Description: game grid representing the Tetris board
+//              Handles grid init, checking for full/empty cells, row clearing, 
+//              and drawing the grid using GDIDrawer
+// Author: Jaedyn Carbonell
+//***********************************************************************************
+
+using GDIDrawer;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace tetris_gdi_drawer
 {
     public class grid
     {
-        public int[,] gameGrid;
-        public Color[] cellColors;
+        // VARIABLE DECLARATION
+        public int[,] gameGrid;        // 2D array storing the state of each cell (0 = empty, >0 = block ID)
+        public Color[] cellColors;     // Array of colors for each type of block
 
+        // Automatic Properties
         public int numRows { get; set; } = 20;
         public int numCols { get; set; } = 10;
         public int cellSize { get; set; } = 30;
         public Color cellColor { get; set; }
 
+        /// <summary>
+        /// Custom CTOR - inits grid
+        /// </summary>
         public grid()
         {
             numRows = 20;
             numCols = 10;
             cellSize = 30;
+
+            // init game grid with empty cells
             gameGrid = new int[numRows, numCols];
 
-            colors colorList = new colors();              // create instance
+            // init colours from color.cs
+            colors colorList = new colors();                  // create instance
             cellColors = colorList.getCellColors().ToArray(); // assign list in color class
-            cellColor = cellColors[0]; // default color
+            cellColor = cellColors[0];                        // default color
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void PrintGrid()
         {
             for (int row = 0; row < numRows; row++)

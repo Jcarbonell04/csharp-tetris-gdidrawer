@@ -1,41 +1,50 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//***********************************************************************************
+// Program: main.cs
+// Description: main windows form runnig the game using GDIDrawer
+//              initializes game, handles game, update timers + rendering
+// Author: Jaedyn Carbonell
+//***********************************************************************************
+
+using System;
 using System.Windows.Forms;
 using GDIDrawer;
 
 namespace tetris_gdi_drawer
 {
-    public partial class main : Form // printes scaled idk why
+    public partial class main : Form 
     {
+        // VARIABLE DECLARATION
         private const int canvasHeight = 620;
         private const int canvasWidth = 500;
         private CDrawer canvas; 
         private grid gameGrid = new grid();
         private game game =  new game();
 
+        /// <summary>
+        /// CTOR - initializes form
+        /// </summary>
         public main()
         {
             InitializeComponent();
-            KeyPreview = true;
-            Console.WriteLine("ic");
-
+            KeyPreview = true;          // capture keyboard input
+            Console.WriteLine("ctor");
         }
 
+        /// <summary>
+        /// Keyboard event handler for GDIDrawer
+        /// </summary>
+        /// <param name="bIsDown">true if key is pressed, false if released</param>
+        /// <param name="keyCode">Key that was pressed</param>
+        /// <param name="dr">GDIDrawer canvas</param>
         private void Canvas_KeyboardEvent(bool bIsDown, Keys keyCode, CDrawer dr)
         {
+            // ignore key releases
             if (!bIsDown) 
             { 
                 return; 
             }
 
-            //Console.WriteLine("keydown");
-            // MessageBox.Show($"Pressed: {e.KeyCode}");
+            // if game is over, reset the game on any key press
             if (game._gameOver)
             {
                 game._gameOver = false;
@@ -65,10 +74,13 @@ namespace tetris_gdi_drawer
             }
 
             Redraw(); // like pygame.display.update()
-
-            
         }
 
+        /// <summary>
+        /// Inits game and canvas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UI_Start_Btn_Click(object sender, EventArgs e)
         {
             canvas = new CDrawer(canvasWidth, canvasHeight);
@@ -83,6 +95,11 @@ namespace tetris_gdi_drawer
             canvas.KeyboardEvent += Canvas_KeyboardEvent;
         }
 
+        /// <summary>
+        /// updates game state every 200ms
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UI_GameUpdate_Tmr_Tick(object sender, EventArgs e)
         {
             // every 200mS move tetromino 
@@ -92,13 +109,14 @@ namespace tetris_gdi_drawer
             Redraw();
         }
 
+        /// <summary>
+        /// clears and redraws the canvas
+        /// </summary>
         private void Redraw()
         {
             canvas.Clear(); // like screen.fill()
             game.Draw(canvas); // custom draw logic for grid + block
             canvas.Render();
         }
-
-      
     }
 }

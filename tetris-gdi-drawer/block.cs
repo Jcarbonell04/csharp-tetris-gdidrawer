@@ -100,17 +100,18 @@ namespace tetris_gdi_drawer
         {
             foreach (Position tile in GetCellPositions())
             {
-                int x = tile.Col * cellSize + offsetX;
-                int y = tile.Row * cellSize + offsetY;
-                int w = cellSize - 1;
-                int h = cellSize - 1;
-                if (x > 0 && x + w <= canvas.ScaledWidth && y > 0 && y + h <= canvas.ScaledHeight) // pygame prolly check and doesnt print outsdie so you gotta check if teh block fits in the canvas here
-                {
-                    canvas.AddRectangle(x, y, w, h, color[id]);    // draw tetrimino
-                }
+                int x = tile.Col * cellSize + offsetX;  // calculate pixel X
+                int y = tile.Row * cellSize + offsetY;  // calculate pixel Y
+                int w = cellSize - 1;                   // width (small gap for grid effect)
+                int h = cellSize - 1;                   // height (small gap)
 
-               
+                // check if tile is within canvas bounds before drawing
+                if (x > 0 && x + w <= canvas.ScaledWidth && y > 0 && y + h <= canvas.ScaledHeight)
+                {
+                    canvas.AddRectangle(x, y, w, h, color[id]); // draw tile
+                }
             }
+
             Console.WriteLine($"y: {GetCellPositions().First().Row}");
         }
     }
