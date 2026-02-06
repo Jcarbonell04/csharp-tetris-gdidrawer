@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.UI_Start_Btn = new System.Windows.Forms.Button();
-            this.UI_GameUpdate_Tmr = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // UI_Start_Btn
@@ -42,11 +40,6 @@
             this.UI_Start_Btn.Text = "Start!";
             this.UI_Start_Btn.UseVisualStyleBackColor = true;
             this.UI_Start_Btn.Click += new System.EventHandler(this.UI_Start_Btn_Click);
-            // 
-            // UI_GameUpdate_Tmr
-            // 
-            this.UI_GameUpdate_Tmr.Interval = 5000;
-            this.UI_GameUpdate_Tmr.Tick += new System.EventHandler(this.UI_GameUpdate_Tmr_Tick);
             // 
             // main
             // 
@@ -63,7 +56,6 @@
         #endregion
 
         private System.Windows.Forms.Button UI_Start_Btn;
-        private System.Windows.Forms.Timer UI_GameUpdate_Tmr;
     }
 }
 

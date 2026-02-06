@@ -11,14 +11,15 @@ using GDIDrawer;
 
 namespace tetris_gdi_drawer
 {
-    public partial class main : Form 
+    public partial class main : Form
     {
         // VARIABLE DECLARATION
         private const int canvasHeight = 620;
         private const int canvasWidth = 500;
-        private CDrawer canvas; 
+        private CDrawer canvas;
         private grid gameGrid = new grid();
-        private game game =  new game();
+        private game game = new game();
+        private Timer UI_GameUpdate_Tmr;
 
         /// <summary>
         /// CTOR - initializes form
@@ -28,6 +29,10 @@ namespace tetris_gdi_drawer
             InitializeComponent();
             KeyPreview = true;          // capture keyboard input
             Console.WriteLine("ctor");
+
+            UI_GameUpdate_Tmr = new Timer();
+            UI_GameUpdate_Tmr.Interval = 200;
+            UI_GameUpdate_Tmr.Tick += UI_GameUpdate_Tmr_Tick;
         }
 
         /// <summary>
@@ -39,9 +44,9 @@ namespace tetris_gdi_drawer
         private void Canvas_KeyboardEvent(bool bIsDown, Keys keyCode, CDrawer dr)
         {
             // ignore key releases
-            if (!bIsDown) 
-            { 
-                return; 
+            if (!bIsDown)
+            {
+                return;
             }
 
             // if game is over, reset the game on any key press
