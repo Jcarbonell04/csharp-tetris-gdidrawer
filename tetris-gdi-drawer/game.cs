@@ -116,8 +116,10 @@ namespace tetris_gdi_drawer
             Console.WriteLine("DOWN 1");
             _currentBlock.Move(1, 0);
             if (!InBounds() || !CollisionCheck())
+            {
                 _currentBlock.Move(-1, 0);
-            LockBlock();
+                LockBlock();
+            }
         }
 
         /// <summary>
@@ -147,8 +149,8 @@ namespace tetris_gdi_drawer
                 UpdateScore(rowsCleared, 0);
             
             // Check for game over
-            if (!CollisionCheck())
-                _gameOver = false;
+            if (!CollisionCheck() || !InBounds())
+                _gameOver = true;
         }
 
         /// <summary>
@@ -214,8 +216,9 @@ namespace tetris_gdi_drawer
             Position[] tiles = _currentBlock.GetCellPositions();
             foreach (var tile in tiles)
             {
-                if (!_grid.IsEmpty(tile.Row, tile.Col))
+                if (!_grid.IsInside(tile.Row, tile.Col) || !_grid.IsEmpty(tile.Row, tile.Col))
                     return false;
+
             }
             return true;
         }

@@ -18,7 +18,7 @@ namespace tetris_gdi_drawer
     public class Block
     {
         public int id;
-        public Position[,] cells;
+        public Position[][] cells;
         public int cellSize;
         public int rowOffset;
         public int colOffset;
@@ -32,7 +32,7 @@ namespace tetris_gdi_drawer
         public Block(int id)
         {
             this.id = id;
-            cells = new Position[4,4]; //4 x4
+            cells = new Position[4][]; //4 x4
             cellSize = 30;
             rowOffset = 0;
             colOffset = 0;
@@ -49,8 +49,8 @@ namespace tetris_gdi_drawer
         /// <param name="cols">column</param>
         public void Move(int rows, int cols)
         {
-            rowOffset = rows;
-            colOffset = cols;
+            rowOffset += rows;
+            colOffset += cols;
         }
 
         /// <summary>
@@ -62,10 +62,8 @@ namespace tetris_gdi_drawer
             Position[] movedTiles = new Position[4];
             for (int i = 0; i < 4; i++) // 4 tiles per tetromino
             {
-                Position position = cells[rotationState, i]; // cells[x, y]
-                position.Row += rowOffset;
-                position.Col += colOffset;
-                movedTiles[i] = position;
+                Position original = cells[rotationState][i];
+                movedTiles[i] = new Position(original.Row + rowOffset, original.Col + colOffset);
             }
             return movedTiles;
         }

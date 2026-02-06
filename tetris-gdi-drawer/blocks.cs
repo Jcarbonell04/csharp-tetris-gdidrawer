@@ -6,18 +6,17 @@
 //***********************************************************************************
 
 namespace tetris_gdi_drawer
-{   
-    // subclasses of baseblock in block.cs 
+{
     public class lBlock : Block
     {
         public lBlock() : base(1)
         {
-            cells = new Position[4, 4]
+            cells = new Position[4][]
             {
-                { new Position(0, 2), new Position(1, 0), new Position(1, 1), new Position(1, 2) }, // Rotation State 1
-                { new Position(0, 1), new Position(1, 1), new Position(2, 1), new Position(2, 2) }, // Rotation State 2
-                { new Position(1, 0), new Position(1, 1), new Position(1, 2), new Position(2, 0) }, // Rotation State 3
-                { new Position(0, 0), new Position(0, 1), new Position(1, 1), new Position(2, 1) }  // Rotation State 4
+                new Position[] { new Position(0,2), new Position(1,0), new Position(1,1), new Position(1,2) }, // Rotation 0
+                new Position[] { new Position(0,1), new Position(1,1), new Position(2,1), new Position(2,2) }, // Rotation 1
+                new Position[] { new Position(1,0), new Position(1,1), new Position(1,2), new Position(2,0) }, // Rotation 2
+                new Position[] { new Position(0,0), new Position(0,1), new Position(1,1), new Position(2,1) }  // Rotation 3
             };
             Move(0, 3);
         }
@@ -27,12 +26,12 @@ namespace tetris_gdi_drawer
     {
         public jBlock() : base(2)
         {
-            cells = new Position[4, 4]
+            cells = new Position[4][]
             {
-                { new Position(0, 0), new Position(1, 0), new Position(1, 1), new Position(1, 2) }, // Rotation State 1
-                { new Position(0, 1), new Position(0, 2), new Position(1, 1), new Position(2, 1) }, // Rotation State 2
-                { new Position(1, 0), new Position(1, 1), new Position(1, 2), new Position(2, 2) }, // Rotation State 3
-                { new Position(0, 1), new Position(1, 1), new Position(2, 0), new Position(2, 1) }  // Rotation State 4
+                new Position[] { new Position(0,0), new Position(1,0), new Position(1,1), new Position(1,2) },
+                new Position[] { new Position(0,1), new Position(0,2), new Position(1,1), new Position(2,1) },
+                new Position[] { new Position(1,0), new Position(1,1), new Position(1,2), new Position(2,2) },
+                new Position[] { new Position(0,1), new Position(1,1), new Position(2,0), new Position(2,1) }
             };
             Move(0, 3);
         }
@@ -42,12 +41,12 @@ namespace tetris_gdi_drawer
     {
         public iBlock() : base(3)
         {
-            cells = new Position[4, 4]
+            cells = new Position[4][]
             {
-                { new Position(1, 0), new Position(1, 1), new Position(1, 2), new Position(1, 3) }, // Rotation State 1
-                { new Position(0, 2), new Position(1, 2), new Position(2, 2), new Position(3, 2) }, // Rotation State 2
-                { new Position(2, 0), new Position(2, 1), new Position(2, 2), new Position(2, 3) }, // Rotation State 3
-                { new Position(0, 1), new Position(1, 1), new Position(2, 1), new Position(3, 1) }  // Rotation State 4
+                new Position[] { new Position(1,0), new Position(1,1), new Position(1,2), new Position(1,3) },
+                new Position[] { new Position(0,2), new Position(1,2), new Position(2,2), new Position(3,2) },
+                new Position[] { new Position(2,0), new Position(2,1), new Position(2,2), new Position(2,3) },
+                new Position[] { new Position(0,1), new Position(1,1), new Position(2,1), new Position(3,1) }
             };
             Move(-1, 3);
         }
@@ -57,9 +56,12 @@ namespace tetris_gdi_drawer
     {
         public oBlock() : base(4)
         {
-            cells = new Position[1, 4]
+            cells = new Position[4][]
             {
-                { new Position(0, 0), new Position(0, 1), new Position(1, 0), new Position(1, 1) }  // Rotation State 1
+                new Position[] { new Position(0,0), new Position(0,1), new Position(1,0), new Position(1,1) },
+                new Position[] { new Position(0,0), new Position(0,1), new Position(1,0), new Position(1,1) },
+                new Position[] { new Position(0,0), new Position(0,1), new Position(1,0), new Position(1,1) },
+                new Position[] { new Position(0,0), new Position(0,1), new Position(1,0), new Position(1,1) }
             };
             Move(0, 4);
         }
@@ -69,12 +71,12 @@ namespace tetris_gdi_drawer
     {
         public sBlock() : base(5)
         {
-            cells = new Position[4, 4]
+            cells = new Position[4][]
             {
-                { new Position(0, 1), new Position(0, 2), new Position(1, 0), new Position(1, 1) }, // Rotation State 1
-                { new Position(0, 1), new Position(1, 1), new Position(1, 2), new Position(2, 2) }, // Rotation State 2
-                { new Position(1, 1), new Position(1, 2), new Position(2, 0), new Position(2, 1) }, // Rotation State 3
-                { new Position(0, 0), new Position(1, 0), new Position(1, 1), new Position(2, 1) }  // Rotation State 4
+                new Position[] { new Position(0,1), new Position(0,2), new Position(1,0), new Position(1,1) },
+                new Position[] { new Position(0,1), new Position(1,1), new Position(1,2), new Position(2,2) },
+                new Position[] { new Position(1,1), new Position(1,2), new Position(2,0), new Position(2,1) },
+                new Position[] { new Position(0,0), new Position(1,0), new Position(1,1), new Position(2,1) }
             };
             Move(0, 3);
         }
@@ -84,12 +86,12 @@ namespace tetris_gdi_drawer
     {
         public tBlock() : base(6)
         {
-            cells = new Position[4, 4]
+            cells = new Position[4][]
             {
-                { new Position(0, 1), new Position(1, 0), new Position(1, 1), new Position(1, 2) }, // Rotation State 1
-                { new Position(0, 1), new Position(1, 1), new Position(1, 2), new Position(2, 1) }, // Rotation State 2
-                { new Position(1, 0), new Position(1, 1), new Position(1, 2), new Position(2, 1) }, // Rotation State 3
-                { new Position(0, 1), new Position(1, 0), new Position(1, 1), new Position(2, 1) }  // Rotation State 4
+                new Position[] { new Position(0,1), new Position(1,0), new Position(1,1), new Position(1,2) },
+                new Position[] { new Position(0,1), new Position(1,1), new Position(1,2), new Position(2,1) },
+                new Position[] { new Position(1,0), new Position(1,1), new Position(1,2), new Position(2,1) },
+                new Position[] { new Position(0,1), new Position(1,0), new Position(1,1), new Position(2,1) }
             };
             Move(0, 3);
         }
@@ -99,12 +101,12 @@ namespace tetris_gdi_drawer
     {
         public zBlock() : base(7)
         {
-            cells = new Position[4, 4]
+            cells = new Position[4][]
             {
-                { new Position(0, 0), new Position(0, 1), new Position(1, 1), new Position(1, 2) }, // Rotation State 1
-                { new Position(0, 2), new Position(1, 1), new Position(1, 2), new Position(2, 1) }, // Rotation State 2
-                { new Position(1, 0), new Position(1, 1), new Position(2, 1), new Position(2, 2) }, // Rotation State 3
-                { new Position(0, 1), new Position(1, 0), new Position(1, 1), new Position(2, 0) }  // Rotation State 4
+                new Position[] { new Position(0,0), new Position(0,1), new Position(1,1), new Position(1,2) },
+                new Position[] { new Position(0,2), new Position(1,1), new Position(1,2), new Position(2,1) },
+                new Position[] { new Position(1,0), new Position(1,1), new Position(2,1), new Position(2,2) },
+                new Position[] { new Position(0,1), new Position(1,0), new Position(1,1), new Position(2,0) }
             };
             Move(0, 3);
         }
