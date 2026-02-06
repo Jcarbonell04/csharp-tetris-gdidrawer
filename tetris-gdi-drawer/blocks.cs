@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
+﻿//***********************************************************************************
+// Program: blocks.cs
+// Description: Defines the 7 Tetris tetromino shapes and their rotation states
+//              inherits from main block.cs 
+// Author: Jaedyn Carbonell
+//***********************************************************************************
 
 namespace tetris_gdi_drawer
 {   

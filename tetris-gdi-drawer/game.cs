@@ -13,6 +13,7 @@ namespace tetris_gdi_drawer
 {
     public class game
     {
+        // VARIABLE DECLARATIONS
         private Random _rand = new Random();
         private grid _grid;
         private List<Block> _blockList = new List<Block>();
@@ -183,13 +184,16 @@ namespace tetris_gdi_drawer
         public void Rotate()
         {
             _currentBlock.Rotate();
+
+            // undo rotation if outside grid or causes collisiom
             if (!InBounds() || !CollisionCheck())
                 _currentBlock.UndoRotation();
         }
 
         /// <summary>
-        /// 
+        /// Checks if all tiles are inside the grid boundaries
         /// </summary>
+        /// <returns>bool - true if within gamegrid</returns>
         bool InBounds()
         {
             Position[] tiles = _currentBlock.GetCellPositions();
@@ -201,7 +205,10 @@ namespace tetris_gdi_drawer
             return true;
         }
 
-        // block fits
+        /// <summary>
+        /// Checks if current block overlaps
+        /// </summary>
+        /// <returns>bool - fasle if rotation causes collision</returns>
         bool CollisionCheck()
         {
             Position[] tiles = _currentBlock.GetCellPositions();
@@ -213,12 +220,16 @@ namespace tetris_gdi_drawer
             return true;
         }
 
-        // draw
+        /// <summary>
+        /// Draws the grid, the active falling, the next block in preview
+        /// </summary>
+        /// <param name="canvas">CDrawer to draw on</param>
         public void Draw(CDrawer canvas)
         {
             _grid.Draw(canvas);
             _currentBlock.Draw(canvas, 1 + 10, 1 + 10);
 
+            // iBlock and oBlock
             if (_nextBlock.id == 3)      // iBlock
                 _nextBlock.Draw(canvas, 255, 290);
             else if (_nextBlock.id == 4) // oBlock
@@ -226,6 +237,5 @@ namespace tetris_gdi_drawer
             else
                 _nextBlock.Draw(canvas, 270, 270); // everythign else
         }
-
     }
 }

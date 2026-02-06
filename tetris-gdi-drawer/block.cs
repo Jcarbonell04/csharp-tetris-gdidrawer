@@ -1,14 +1,20 @@
-﻿using GDIDrawer;
+﻿//***********************************************************************************
+// Program: blocks.cs
+// Description: Defines the Block class used for Tetris tetrominoes, including
+//              tile positions, rotation states, movement, and drawing logic.
+// Author: Jaedyn Carbonell
+//***********************************************************************************
+
+using GDIDrawer;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace tetris_gdi_drawer
 {
+    /// <summary>
+    /// Represents a single Tetris block (tetromino)
+    /// </summary>
     public class Block
     {
         public int id;
@@ -19,6 +25,10 @@ namespace tetris_gdi_drawer
         public int rotationState;
         public Color[] color; // get from color class later
 
+        /// <summary>
+        /// CTOR - initialize block with its ID
+        /// </summary>
+        /// <param name="id"></param>
         public Block(int id)
         {
             this.id = id;
@@ -32,12 +42,21 @@ namespace tetris_gdi_drawer
 
         }
 
+        /// <summary>
+        /// Move the block by specified rows and columns
+        /// </summary>
+        /// <param name="rows">row</param>
+        /// <param name="cols">column</param>
         public void Move(int rows, int cols)
         {
             rowOffset = rows;
             colOffset = cols;
         }
 
+        /// <summary>
+        /// Get the current positions of the 4 tiles with applied offsets
+        /// </summary>
+        /// <returns>movedTiles</returns>
         public Position[] GetCellPositions()
         {
             Position[] movedTiles = new Position[4];
@@ -51,6 +70,9 @@ namespace tetris_gdi_drawer
             return movedTiles;
         }
 
+        /// <summary>
+        /// Rotate the block clockwise
+        /// </summary>
         public void Rotate()
         {
             rotationState += 1;
@@ -58,6 +80,9 @@ namespace tetris_gdi_drawer
             rotationState = 0;                         // cells.GetLength(1)) = num tiles per rotationd
         }
 
+        /// <summary>
+        /// Rotate the block counter-clockwise
+        /// </summary>
         public void UndoRotation()
         {
             rotationState -= 1;
@@ -65,6 +90,12 @@ namespace tetris_gdi_drawer
                 rotationState = cells.GetLength(0) - 1;
         }
 
+        /// <summary>
+        /// Draw the block on the given canvas
+        /// </summary>
+        /// <param name="canvas">canvas to draw on</param>
+        /// <param name="offsetX">xPos to draw block</param>
+        /// <param name="offsetY">yPos to draw block</param>
         public void Draw(CDrawer canvas, int offsetX, int offsetY)
         {
             foreach (Position tile in GetCellPositions())
