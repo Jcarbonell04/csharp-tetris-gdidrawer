@@ -11,7 +11,7 @@ namespace tetris_gdi_drawer
     {
         public lBlock() : base(1)
         {
-            cells = new Position[4][]
+            _cells = new Position[4][]
             {
                 new Position[] { new Position(0,2), new Position(1,0), new Position(1,1), new Position(1,2) }, // Rotation 0
                 new Position[] { new Position(0,1), new Position(1,1), new Position(2,1), new Position(2,2) }, // Rotation 1
@@ -26,7 +26,7 @@ namespace tetris_gdi_drawer
     {
         public jBlock() : base(2)
         {
-            cells = new Position[4][]
+            _cells = new Position[4][]
             {
                 new Position[] { new Position(0,0), new Position(1,0), new Position(1,1), new Position(1,2) },
                 new Position[] { new Position(0,1), new Position(0,2), new Position(1,1), new Position(2,1) },
@@ -41,7 +41,7 @@ namespace tetris_gdi_drawer
     {
         public iBlock() : base(3)
         {
-            cells = new Position[4][]
+            _cells = new Position[4][]
             {
                 new Position[] { new Position(1,0), new Position(1,1), new Position(1,2), new Position(1,3) },
                 new Position[] { new Position(0,2), new Position(1,2), new Position(2,2), new Position(3,2) },
@@ -56,7 +56,7 @@ namespace tetris_gdi_drawer
     {
         public oBlock() : base(4)
         {
-            cells = new Position[4][]
+            _cells = new Position[4][]
             {
                 new Position[] { new Position(0,0), new Position(0,1), new Position(1,0), new Position(1,1) },
                 new Position[] { new Position(0,0), new Position(0,1), new Position(1,0), new Position(1,1) },
@@ -71,7 +71,7 @@ namespace tetris_gdi_drawer
     {
         public sBlock() : base(5)
         {
-            cells = new Position[4][]
+            _cells = new Position[4][]
             {
                 new Position[] { new Position(0,1), new Position(0,2), new Position(1,0), new Position(1,1) },
                 new Position[] { new Position(0,1), new Position(1,1), new Position(1,2), new Position(2,2) },
@@ -86,7 +86,7 @@ namespace tetris_gdi_drawer
     {
         public tBlock() : base(6)
         {
-            cells = new Position[4][]
+            _cells = new Position[4][]
             {
                 new Position[] { new Position(0,1), new Position(1,0), new Position(1,1), new Position(1,2) },
                 new Position[] { new Position(0,1), new Position(1,1), new Position(1,2), new Position(2,1) },
@@ -101,7 +101,7 @@ namespace tetris_gdi_drawer
     {
         public zBlock() : base(7)
         {
-            cells = new Position[4][]
+            _cells = new Position[4][]
             {
                 new Position[] { new Position(0,0), new Position(0,1), new Position(1,1), new Position(1,2) },
                 new Position[] { new Position(0,2), new Position(1,1), new Position(1,2), new Position(2,1) },

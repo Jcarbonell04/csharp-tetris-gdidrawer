@@ -8,17 +8,18 @@
 using System;
 using System.Windows.Forms;
 using GDIDrawer;
+using System.Drawing;
 
 namespace tetris_gdi_drawer
 {
     public partial class main : Form
     {
         // VARIABLE DECLARATION
-        private const int canvasHeight = 620;
-        private const int canvasWidth = 500;
-        private CDrawer canvas;
-        private grid gameGrid = new grid();
-        private game game = new game();
+        private const int _canvasHeight = 620;
+        private const int _canvasWidth = 500;
+        private CDrawer _canvas;
+        private grid _gameGrid = new grid();
+        private game _game = new game();
         private Timer UI_GameUpdate_Tmr;
 
         /// <summary>
@@ -33,6 +34,18 @@ namespace tetris_gdi_drawer
             UI_GameUpdate_Tmr = new Timer();
             UI_GameUpdate_Tmr.Interval = 200;
             UI_GameUpdate_Tmr.Tick += UI_GameUpdate_Tmr_Tick;
+
+            // Center of the screen
+            this.StartPosition = FormStartPosition.CenterScreen;
+
+            this.Shown += Main_Shown;
+        }
+
+        private void Main_Shown(object sender, EventArgs e)
+        {
+            if (_canvas == null)
+                return;
+            Activate(); 
         }
 
         /// <summary>
@@ -50,30 +63,30 @@ namespace tetris_gdi_drawer
             }
 
             // if game is over, reset the game on any key press
-            if (game._gameOver)
+            if (_game._gameOver)
             {
-                game._gameOver = false;
-                game.Reset();
+                _game._gameOver = false;
+                _game.Reset();
                 return;
             }
 
             switch (keyCode)
             {
                 case Keys.Left:
-                    game.MoveLeft();
+                    _game.MoveLeft();
                     Console.WriteLine("left");
                     break;
                 case Keys.Right:
-                    game.MoveRight();
+                    _game.MoveRight();
                     Console.WriteLine("right");
                     break;
                 case Keys.Down:
-                    game.SoftDrop();
+                    _game.SoftDrop();
                     //game.UpdateScore(0, 1);
                     Console.WriteLine("down");
                     break;
                 case Keys.Up:
-                    game.Rotate();
+                    _game.Rotate();
                     Console.WriteLine("rotATW");
                     break;
             }
@@ -88,16 +101,55 @@ namespace tetris_gdi_drawer
         /// <param name="e"></param>
         private void UI_Start_Btn_Click(object sender, EventArgs e)
         {
-            canvas = new CDrawer(canvasWidth, canvasHeight);
+            // Get the screen the form is currently on
+            Screen currentScreen = Screen.FromControl(this);
+            Rectangle workArea = currentScreen.WorkingArea;
+
+            _canvas = new CDrawer(_canvasWidth, _canvasHeight);
+
+            // Center canvas on THIS screen
+            int canvasX = workArea.Left + (workArea.Width - _canvasWidth) / 2;
+            int canvasY = workArea.Top + (workArea.Height - _canvasHeight) / 2;
+            _canvas.Position = new Point(canvasX, canvasY);
+
+            // Place form to the left of the canvas
+            int gap = 20;
+            int formX = canvasX - this.Width - gap;
+            int formY = canvasY;
+
+            // Clamp so it never leaves the monitor
+            formX = Math.Max(workArea.Left, formX);
+            formY = Math.Max(workArea.Top, formY);
+
+            this.Location = new Point(formX, formY);
+
+            //// Center canvas on screen
+            //int canvasX = (screenWidth - _canvasWidth) / 2;
+            //int canvasY = (screenHeight - _canvasHeight) / 2;
+            //_canvas.Position = new Point(canvasX, canvasY);
+
+            //// Move form to the LEFT of the canvas
+            //int gap = 20; // space between form and canvas
+            //int formX = canvasX - this.Width - gap;
+            //int formY = canvasY; // align tops (or tweak if you want)
+
+            //this.Location = new Point(formX, formY);
+
+            //int x = (screenWidth - _canvasWidth) / 2;
+            //int y = (screenHeight - _canvasHeight) / 2;
+            //_canvas.Position = new Point(x, y);
+
+            ////this.Location = new Point(_canvasWidth, _canvasHeight);
+
             UI_GameUpdate_Tmr.Start();
 
-            canvas.Clear();
+            _canvas.Clear();
             // canvas.AddText("testing", 40, Color.Red);
-            canvas.Render();
-            gameGrid.PrintGrid();   // method in grid class
-            gameGrid.Draw(canvas);
+            _canvas.Render();
+            _gameGrid.PrintGrid();   // method in grid class
+            _gameGrid.Draw(_canvas);
 
-            canvas.KeyboardEvent += Canvas_KeyboardEvent;
+            _canvas.KeyboardEvent += Canvas_KeyboardEvent;
         }
 
         /// <summary>
@@ -109,8 +161,8 @@ namespace tetris_gdi_drawer
         {
             // every 200mS move tetromino 
             Console.WriteLine("200");
-            if (!game._gameOver) // game still running
-                game.SoftDrop();
+            if (!_game._gameOver) // game still running
+                _game.SoftDrop();
             Redraw();
         }
 
@@ -119,9 +171,9 @@ namespace tetris_gdi_drawer
         /// </summary>
         private void Redraw()
         {
-            canvas.Clear(); // like screen.fill()
-            game.Draw(canvas); // custom draw logic for grid + block
-            canvas.Render();
+            _canvas.Clear(); // like screen.fill()
+            _game.Draw(_canvas); // custom draw logic for grid + block
+            _canvas.Render();
         }
     }
 }

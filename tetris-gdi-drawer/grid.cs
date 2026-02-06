@@ -15,8 +15,8 @@ namespace tetris_gdi_drawer
     public class grid
     {
         // VARIABLE DECLARATION
-        public int[,] gameGrid;        // 2D array storing the state of each cell (0 = empty, >0 = block ID)
-        public Color[] cellColors;     // Array of colors for each type of block
+        public int[,] _gameGrid;        // 2D array storing the state of each cell (0 = empty, >0 = block ID)
+        public Color[] _cellColors;     // Array of colors for each type of block
 
         // Automatic Properties
         public int numRows { get; set; } = 20;
@@ -34,12 +34,12 @@ namespace tetris_gdi_drawer
             cellSize = 30;
 
             // init game grid with empty cells
-            gameGrid = new int[numRows, numCols];
+            _gameGrid = new int[numRows, numCols];
 
             // init colours from color.cs
             colors colorList = new colors();                  // create instance
-            cellColors = colorList.getCellColors().ToArray(); // assign list in color class
-            cellColor = cellColors[0];                        // default color
+            _cellColors = colorList.getCellColors().ToArray(); // assign list in color class
+            cellColor = _cellColors[0];                        // default color
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace tetris_gdi_drawer
             {
                 for(int col = 0; col < numCols; col++)
                 {
-                    Console.Write(gameGrid[row,col]);
+                    Console.Write(_gameGrid[row,col]);
                 }
                 Console.WriteLine();
             }
@@ -78,7 +78,7 @@ namespace tetris_gdi_drawer
         /// <returns></returns>
         public bool IsEmpty(int row, int col)
         {
-            if (gameGrid[row, col] == 0)
+            if (_gameGrid[row, col] == 0)
                 return true;
             return false;
         }
@@ -91,7 +91,7 @@ namespace tetris_gdi_drawer
         bool IsRowFull(int row)
         {
             for (int col = 0; col < numCols; col++)
-                if (gameGrid[row, col] == 0)
+                if (_gameGrid[row, col] == 0)
                     return false;
             return true;
         }
@@ -104,7 +104,7 @@ namespace tetris_gdi_drawer
         {
             for (int col = 0; col < numCols; col++)
             {
-                gameGrid[row, col] = 0;
+                _gameGrid[row, col] = 0;
             }
         }
 
@@ -117,8 +117,8 @@ namespace tetris_gdi_drawer
         {
             for(int col = 0; col < numCols; col++)
             {
-                gameGrid[row + movedRows, col] = gameGrid[row, col]; // copy to new row
-                gameGrid[row, col] = 0;                              // clear original row
+                _gameGrid[row + movedRows, col] = _gameGrid[row, col]; // copy to new row
+                _gameGrid[row, col] = 0;                              // clear original row
             }
         }
 
@@ -153,7 +153,7 @@ namespace tetris_gdi_drawer
             {
                 for (int col = 0; col < numCols; col++)
                 {
-                    gameGrid[row, col] = 0;
+                    _gameGrid[row, col] = 0;
                 }
             }
         }
@@ -168,8 +168,8 @@ namespace tetris_gdi_drawer
             {
                 for (int col = 0; col < numCols; col++)
                 {
-                    int cellValue = gameGrid[row, col];
-                    Color cellColor = cellColors[cellValue];  // not impletmented yet
+                    int cellValue = _gameGrid[row, col];
+                    Color cellColor = _cellColors[cellValue];  // not impletmented yet
                     canvas.AddRectangle(col * cellSize + 10 + 1, row * cellSize + 10 + 1,
                                         cellSize - 1, cellSize - 1, cellColor);
                 }

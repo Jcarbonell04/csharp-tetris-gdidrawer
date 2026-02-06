@@ -17,13 +17,13 @@ namespace tetris_gdi_drawer
     /// </summary>
     public class Block
     {
-        public int id;
-        public Position[][] cells;
-        public int cellSize;
-        public int rowOffset;
-        public int colOffset;
-        public int rotationState;
-        public Color[] color; // get from color class later
+        public int _id;
+        public Position[][] _cells;
+        public int _cellSize;
+        public int _rowOffset;
+        public int _colOffset;
+        public int _rotationState;
+        public Color[] _color; // get from color class later
 
         /// <summary>
         /// CTOR - initialize block with its ID
@@ -31,14 +31,14 @@ namespace tetris_gdi_drawer
         /// <param name="id"></param>
         public Block(int id)
         {
-            this.id = id;
-            cells = new Position[4][]; //4 x4
-            cellSize = 30;
-            rowOffset = 0;
-            colOffset = 0;
-            rotationState = 0;
+            this._id = id;
+            _cells = new Position[4][]; //4 x4
+            _cellSize = 30;
+            _rowOffset = 0;
+            _colOffset = 0;
+            _rotationState = 0;
             colors colorsList = new colors();
-            color = colorsList.getCellColors().ToArray(); // is this evenr ight
+            _color = colorsList.getCellColors().ToArray(); // is this evenr ight
 
         }
 
@@ -49,8 +49,8 @@ namespace tetris_gdi_drawer
         /// <param name="cols">column</param>
         public void Move(int rows, int cols)
         {
-            rowOffset += rows;
-            colOffset += cols;
+            _rowOffset += rows;
+            _colOffset += cols;
         }
 
         /// <summary>
@@ -62,8 +62,8 @@ namespace tetris_gdi_drawer
             Position[] movedTiles = new Position[4];
             for (int i = 0; i < 4; i++) // 4 tiles per tetromino
             {
-                Position original = cells[rotationState][i];
-                movedTiles[i] = new Position(original.Row + rowOffset, original.Col + colOffset);
+                Position original = _cells[_rotationState][i];
+                movedTiles[i] = new Position(original.Row + _rowOffset, original.Col + _colOffset);
             }
             return movedTiles;
         }
@@ -73,9 +73,9 @@ namespace tetris_gdi_drawer
         /// </summary>
         public void Rotate()
         {
-            rotationState += 1;
-            if (rotationState == cells.GetLength(0))   // cells.GetLength(0)) = num rotation states
-                rotationState = 0;                         // cells.GetLength(1)) = num tiles per rotationd
+            _rotationState += 1;
+            if (_rotationState == _cells.GetLength(0))   // cells.GetLength(0)) = num rotation states
+                _rotationState = 0;                         // cells.GetLength(1)) = num tiles per rotationd
         }
 
         /// <summary>
@@ -83,9 +83,9 @@ namespace tetris_gdi_drawer
         /// </summary>
         public void UndoRotation()
         {
-            rotationState -= 1;
-            if (rotationState == -1)
-                rotationState = cells.GetLength(0) - 1;
+            _rotationState -= 1;
+            if (_rotationState == -1)
+                _rotationState = _cells.GetLength(0) - 1;
         }
 
         /// <summary>
@@ -98,15 +98,15 @@ namespace tetris_gdi_drawer
         {
             foreach (Position tile in GetCellPositions())
             {
-                int x = tile.Col * cellSize + offsetX;  // calculate pixel X
-                int y = tile.Row * cellSize + offsetY;  // calculate pixel Y
-                int w = cellSize - 1;                   // width (small gap for grid effect)
-                int h = cellSize - 1;                   // height (small gap)
+                int x = tile.Col * _cellSize + offsetX;  // calculate pixel X
+                int y = tile.Row * _cellSize + offsetY;  // calculate pixel Y
+                int w = _cellSize - 1;                   // width (small gap for grid effect)
+                int h = _cellSize - 1;                   // height (small gap)
 
                 // check if tile is within canvas bounds before drawing
                 if (x > 0 && x + w <= canvas.ScaledWidth && y > 0 && y + h <= canvas.ScaledHeight)
                 {
-                    canvas.AddRectangle(x, y, w, h, color[id]); // draw tile
+                    canvas.AddRectangle(x, y, w, h, _color[_id]); // draw tile
                 }
             }
 

@@ -135,7 +135,7 @@ namespace tetris_gdi_drawer
             // convert falling block into a fixed block
             Position[] tiles = _currentBlock.GetCellPositions();
             foreach (Position tile in tiles)
-                _grid.gameGrid[tile.Row,tile.Col] = _currentBlock.id;
+                _grid._gameGrid[tile.Row,tile.Col] = _currentBlock._id;
             
             // spawn next block and generate a new block
             _currentBlock = _nextBlock;
@@ -233,9 +233,9 @@ namespace tetris_gdi_drawer
             _currentBlock.Draw(canvas, 1 + 10, 1 + 10);
 
             // iBlock and oBlock
-            if (_nextBlock.id == 3)      // iBlock
+            if (_nextBlock._id == 3)      // iBlock
                 _nextBlock.Draw(canvas, 255, 290);
-            else if (_nextBlock.id == 4) // oBlock
+            else if (_nextBlock._id == 4) // oBlock
                 _nextBlock.Draw(canvas, 255, 280);
             else
                 _nextBlock.Draw(canvas, 270, 270); // everythign else
