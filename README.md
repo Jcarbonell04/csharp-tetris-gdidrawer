@@ -1,5 +1,5 @@
 # csharp-tetris-gdidrawer
-Using GDI Drawer and Windows Forms to make a Tetris Game
+A Tetris game implemented in C# using GDIDrawer for rendering and Windows Forms for the interface. Core Tetris logic and gameplay are included, with classic tetrominoes, grid management, and keyboard controls. Built on the .NET Framework
 
 # Tetris Project Checklist/Goals
 
